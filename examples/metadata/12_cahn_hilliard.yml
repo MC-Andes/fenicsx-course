@@ -15,9 +15,8 @@ units: adimensional
 command: python examples/12_cahn_hilliard.py --quick --output results
 success: deriva de masa<1e-9 y energía no aumenta más de 1e-8
 tolerances: {mass_drift: 1.0e-9, energy_increase: 1.0e-8}
-sources: [https://doi.org/10.1016/j.cma.2026.118985, https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_cahn-hilliard.html]
+sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_cahn-hilliard.html]
 seed: 42
 minimum_version: 0.11.0
 tested_version: 0.11.0.post0
 script: examples/12_cahn_hilliard.py
-all_fem_id: AF-M-01

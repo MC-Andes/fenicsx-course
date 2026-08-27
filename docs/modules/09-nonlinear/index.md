@@ -77,5 +77,6 @@ el bloqueo relajando una tolerancia.
 
 ## Fuentes, licencia, versión y cambios
 
-API `NonlinearProblem` 0.11 y ficha independiente
-[AF-S-05](../../all-fem/af-s-05.md). Implementación original MIT.
+[API `NonlinearProblem` 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/generated/dolfinx.fem.petsc.html).
+La implementación hiperelástica y sus verificaciones son originales del curso
+y están disponibles bajo MIT.

@@ -46,7 +46,9 @@ termina con elasticidad, flujo, no linealidad, Cahn–Hilliard, PETSc y MPI.
 
 ## Alcance de esta versión
 
-La versión 0.1.0 publica una experiencia autocontenida de doce módulos y trece demostraciones. No requiere docente, sesiones ni calificaciones. Los casos
-inspirados en ALL-FEM son reimplementaciones originales; consulta la
-[política de independencia](all-fem/index.md). Python es la interfaz de aprendizaje y
-los cuadernos Jupyter quedan fuera del alcance base.
+La versión 0.1.1 publica una experiencia autocontenida de doce módulos y trece
+demostraciones. No requiere docente, sesiones ni calificaciones. El
+[repertorio verificable](examples/index.md) incluye únicamente problemas cuyo
+código, datos, tolerancias y comprobaciones viven en este repositorio. Python
+es la interfaz de aprendizaje y los cuadernos Jupyter quedan fuera del alcance
+base.

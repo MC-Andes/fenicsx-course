@@ -15,9 +15,8 @@ units: sistema consistente adimensional
 command: python examples/07_plate_with_hole.py --quick --output results
 success: factor entre 1.5 y 8 y error de balance<2e-7
 tolerances: {force_balance_relative: 2.0e-7, concentration_lower: 1.5}
-sources: [https://doi.org/10.1016/j.cma.2026.118985, https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_gmsh.html]
+sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_gmsh.html]
 seed: null
 minimum_version: 0.11.0
 tested_version: 0.11.0.post0
 script: examples/07_plate_with_hole.py
-all_fem_id: AF-S-02

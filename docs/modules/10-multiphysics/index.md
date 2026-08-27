@@ -84,6 +84,6 @@ particionado define criterio de interfaz además de criterios internos.
 
 ## Fuentes, licencia, versión y cambios
 
-[Demo Cahn–Hilliard 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_cahn-hilliard.html)
-y ficha [AF-M-01](../../all-fem/af-m-01.md). Se cambió la perturbación aleatoria
-por una analítica MPI-determinista y se añadieron invariantes obligatorios.
+[Demo Cahn–Hilliard 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_cahn-hilliard.html).
+El ejemplo del curso usa una perturbación analítica MPI-determinista e incluye
+comprobaciones obligatorias de masa y energía libre.
