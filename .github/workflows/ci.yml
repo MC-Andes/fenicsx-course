@@ -100,7 +100,7 @@ jobs:
         shell: micromamba-shell {0}
         run: |
           set -euo pipefail
-          mpirun -n 2 pytest tests/parallel
+          mpirun -n 2 pytest --no-cov tests/parallel
           mpirun -n 2 python examples/00_sanity_check.py --quick --output results
           mpirun -n 2 python examples/04_poisson_manufactured.py --quick --output results
       - uses: actions/upload-artifact@v7
