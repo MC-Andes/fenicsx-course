@@ -15,9 +15,8 @@ units: adimensional
 command: python examples/09_stokes_channel.py --quick --output results
 success: errores y divergencia menores que 2e-5, KSP convergente
 tolerances: {velocity_l2: 2.0e-6, pressure_l2: 2.0e-5}
-sources: [https://doi.org/10.1016/j.cma.2026.118985, https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_stokes.html]
+sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_stokes.html]
 seed: null
 minimum_version: 0.11.0
 tested_version: 0.11.0.post0
 script: examples/09_stokes_channel.py
-all_fem_id: AF-F-01

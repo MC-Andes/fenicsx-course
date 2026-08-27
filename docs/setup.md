@@ -43,9 +43,9 @@ La imagen de la release está fijada por etiqueta y digest en
 `containers/Dockerfile`.
 
 ```bash
-docker build -f containers/Dockerfile -t mcandes/fenicsx-course:0.1.0 .
-docker run --rm -v "$PWD/results:/course/results" mcandes/fenicsx-course:0.1.0
-docker run --rm -v "$PWD:/course" -w /course mcandes/fenicsx-course:0.1.0 \
+docker build -f containers/Dockerfile -t mcandes/fenicsx-course:0.1.1 .
+docker run --rm -v "$PWD/results:/course/results" mcandes/fenicsx-course:0.1.1
+docker run --rm -v "$PWD:/course" -w /course mcandes/fenicsx-course:0.1.1 \
   mpirun -n 2 python3 examples/04_poisson_manufactured.py --quick --output results
 ```
 

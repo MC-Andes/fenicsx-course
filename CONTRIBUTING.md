@@ -9,5 +9,5 @@
 
 Una simulación no se acepta solo porque termina: debe verificar convergencia
 del solver y una solución, tasa, balance o invariante. Las contribuciones
-inspiradas en ALL-FEM deben incluir una ficha de independencia y no copiar
-código o activos cuya licencia no esté declarada.
+al repertorio deben incluir ecuaciones, datos, código ejecutable, metadata,
+tolerancias y fuentes técnicas que permitan reproducir la comprobación.

@@ -5,6 +5,19 @@ y el proyecto usa [Semantic Versioning](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-08-27
+
+### Changed
+
+- El catálogo ahora distingue únicamente problemas con código y verificación
+  reproducible incluidos en el repositorio.
+- Las fuentes de cada ejemplo apuntan a documentación técnica comprobable.
+
+### Removed
+
+- Se retiró el apartado ALL-FEM, sus fichas y sus identificadores porque el
+  material externo no aporta código verificable para estos ejemplos.
+
 ## [0.1.0] - 2026-08-27
 
 ### Added
@@ -14,5 +27,6 @@ y el proyecto usa [Semantic Versioning](https://semver.org/lang/es/).
 - Validación cuantitativa, resultados JSON y pruebas seriales/MPI.
 - Sitio MkDocs y flujos de CI, nightly y GitHub Pages.
 
-[Unreleased]: https://github.com/MC-Andes/fenicsx-course/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/MC-Andes/fenicsx-course/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/MC-Andes/fenicsx-course/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/MC-Andes/fenicsx-course/releases/tag/v0.1.0

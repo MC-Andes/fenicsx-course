@@ -39,7 +39,6 @@ class ExampleMetadata:
     minimum_version: str
     tested_version: str
     script: str
-    all_fem_id: str | None = None
 
     @classmethod
     def from_mapping(cls, data: dict[str, Any]) -> ExampleMetadata:
@@ -111,7 +110,6 @@ class ExampleMetadata:
             minimum_version=str(data["minimum_version"]),
             tested_version=str(data["tested_version"]),
             script=str(data["script"]),
-            all_fem_id=str(data["all_fem_id"]) if data.get("all_fem_id") else None,
         )
 
 

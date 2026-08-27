@@ -15,9 +15,8 @@ units: sistema consistente adimensional
 command: python examples/11_hyperelasticity.py --quick --output results
 success: SNES converge, J mínimo>0.5 y balance<2e-6
 tolerances: {minimum_jacobian: 0.5, force_balance_relative: 2.0e-6}
-sources: [https://doi.org/10.1016/j.cma.2026.118985, https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/generated/dolfinx.fem.petsc.html]
+sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/generated/dolfinx.fem.petsc.html]
 seed: null
 minimum_version: 0.11.0
 tested_version: 0.11.0.post0
 script: examples/11_hyperelasticity.py
-all_fem_id: AF-S-05

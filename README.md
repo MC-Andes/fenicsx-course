@@ -6,10 +6,10 @@ conserva los términos técnicos en inglés cuando ayudan a consultar la API.
 
 ## Estado
 
-La versión `0.1.0` contiene los doce módulos, ejemplos canónicos ejecutables,
-ejercicios, pruebas numéricas, documentación y flujos de CI/publicación. Los
-casos inspirados en ALL-FEM son implementaciones independientes construidas
-desde sus ecuaciones; no contienen código del repositorio de resultados.
+La versión `0.1.1` contiene los doce módulos, trece ejemplos canónicos
+ejecutables, ejercicios, pruebas numéricas, documentación y flujos de
+CI/publicación. El repertorio solo presenta problemas con código incluido,
+criterio cuantitativo de éxito y ejecución comprobable.
 
 ## Instalación nativa
 

@@ -14,14 +14,3 @@
 - J. S. Dokken, [The FEniCSx tutorial](https://jsdokken.com/dolfinx-tutorial/),
   CC BY 4.0. Las explicaciones del curso son originales; cuando se adapta una
   estructura se atribuye y se indican cambios.
-
-## ALL-FEM
-
-- R. Deotale et al., “ALL-FEM: Agentic Large Language Models fine-tuned for
-  finite element methods”, *Computer Methods in Applied Mechanics and
-  Engineering*, 457, 118985, 2026.
-  [DOI 10.1016/j.cma.2026.118985](https://doi.org/10.1016/j.cma.2026.118985).
-- [Preprint arXiv 2603.21011](https://arxiv.org/abs/2603.21011).
-
-El repositorio de resultados consultado no declaraba licencia el 2026-08-26;
-por eso no se usa como fuente de código, figuras ni mallas.

@@ -86,5 +86,6 @@ vez sin justificar. El balance usa flujo entrante con signo opuesto a la normal.
 
 ## Fuentes, licencia, versión y cambios
 
-[Demo Stokes 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_stokes.html),
-[AF-F-01](../../all-fem/af-f-01.md) y [AF-F-03](../../all-fem/af-f-03.md).
+[Demo Stokes 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_stokes.html).
+Los casos del canal y el cilindro incluyen aquí su formulación, código y
+comprobaciones de caudal, divergencia, masa y arrastre.

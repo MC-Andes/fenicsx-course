@@ -83,5 +83,5 @@ Clasifica curvas por bounding box y valida cardinalidades. Un valor estable de
 ## Fuentes, licencia, versión y cambios
 
 [Demo Gmsh 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_gmsh.html).
-Fichas independientes [AF-S-02](../../all-fem/af-s-02.md) y
-[AF-S-03](../../all-fem/af-s-03.md). Geometrías/código originales MIT.
+Las geometrías, el código y los criterios de concentración/continuidad son
+originales del curso y están disponibles bajo MIT.

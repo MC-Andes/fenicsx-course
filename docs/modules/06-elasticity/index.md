@@ -85,5 +85,7 @@ reacción puede cambiar muy poco aunque el máximo de tensión todavía no conve
 
 ## Fuentes, licencia, versión y cambios
 
-El caso `AF-S-01` se reconstruyó independientemente desde la PDE. Véase su
-[ficha](../../all-fem/af-s-01.md) y el demo oficial de elasticidad DOLFINx 0.11.
+La implementación del curso se contrasta con el
+[demo oficial de elasticidad DOLFINx 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_elasticity.html).
+El código, los parámetros y la comprobación de equilibrio están incluidos en
+`examples/06_linear_elasticity.py`.

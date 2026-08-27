@@ -15,9 +15,8 @@ units: sistema consistente adimensional
 command: python examples/06_linear_elasticity.py --quick --output results
 success: error relativo de balance<1e-8 y energía positiva
 tolerances: {force_balance_relative: 1.0e-8}
-sources: [https://doi.org/10.1016/j.cma.2026.118985, https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_elasticity.html]
+sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_elasticity.html]
 seed: null
 minimum_version: 0.11.0
 tested_version: 0.11.0.post0
 script: examples/06_linear_elasticity.py
-all_fem_id: AF-S-01

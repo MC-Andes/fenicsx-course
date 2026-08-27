@@ -15,9 +15,8 @@ units: sistema consistente adimensional
 command: python examples/10_cylinder_flow.py --quick --output results
 success: Picard converge y desbalance de caudal<4 por ciento
 tolerances: {mass_balance_relative: 0.04, picard_relative: 2.0e-5}
-sources: [https://doi.org/10.1016/j.cma.2026.118985, https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_stokes.html]
+sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_stokes.html]
 seed: null
 minimum_version: 0.11.0
 tested_version: 0.11.0.post0
 script: examples/10_cylinder_flow.py
-all_fem_id: AF-F-03

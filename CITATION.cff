@@ -5,7 +5,7 @@ type: software
 authors:
   - name: MC-Andes
     affiliation: Universidad de los Andes
-version: 0.1.0
+version: 0.1.1
 date-released: 2026-08-27
 license: MIT
 repository-code: https://github.com/MC-Andes/fenicsx-course
