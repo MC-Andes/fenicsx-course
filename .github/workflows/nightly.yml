@@ -8,6 +8,10 @@ on:
 permissions:
   contents: read
 
+env:
+  # Fuerza transportes locales/TCP compatibles con runners hospedados.
+  UCX_TLS: self,sm,tcp
+
 concurrency:
   group: nightly
   cancel-in-progress: false
@@ -17,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: mamba-org/setup-micromamba@v2
         with:
           environment-file: conda-lock.yml
@@ -33,10 +37,11 @@ jobs:
       - name: Representative MPI families
         shell: micromamba-shell {0}
         run: |
+          set -euo pipefail
           mpirun -n 2 python examples/06_linear_elasticity.py --quick --output results/mpi2
           mpirun -n 2 python examples/09_stokes_channel.py --quick --output results/mpi2
           mpirun -n 2 python examples/12_cahn_hilliard.py --quick --output results/mpi2
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: nightly-results
@@ -46,7 +51,7 @@ jobs:
   external-links:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: lycheeverse/lychee-action@v2
         with:
           args: >-

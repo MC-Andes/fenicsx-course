@@ -8,6 +8,10 @@ on:
 permissions:
   contents: read
 
+env:
+  # Evita que UCX sondee la interfaz RDMA virtual de los runners hospedados.
+  UCX_TLS: self,sm,tcp
+
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
@@ -16,8 +20,8 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -37,8 +41,8 @@ jobs:
   exercises-smoke:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Execute starter descriptions and solutions
@@ -53,7 +57,7 @@ jobs:
   serial-smoke:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: mamba-org/setup-micromamba@v2
         with:
           environment-file: conda-lock.yml
@@ -66,12 +70,13 @@ jobs:
       - name: Foundational examples
         shell: micromamba-shell {0}
         run: |
+          set -euo pipefail
           python examples/00_sanity_check.py --quick --output results
           python examples/02_tagged_boundaries.py --quick --output results
           python examples/04_poisson_manufactured.py --quick --output results
           python examples/05_heat_diffusion.py --quick --output results
           python examples/06_linear_elasticity.py --quick --write-fields --output results
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: serial-smoke-results
@@ -81,7 +86,7 @@ jobs:
   parallel-smoke:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: mamba-org/setup-micromamba@v2
         with:
           environment-file: conda-lock.yml
@@ -94,10 +99,11 @@ jobs:
       - name: MPI invariants and Poisson
         shell: micromamba-shell {0}
         run: |
+          set -euo pipefail
           mpirun -n 2 pytest tests/parallel
           mpirun -n 2 python examples/00_sanity_check.py --quick --output results
           mpirun -n 2 python examples/04_poisson_manufactured.py --quick --output results
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: parallel-smoke-results
