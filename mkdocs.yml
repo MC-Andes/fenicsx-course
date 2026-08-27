@@ -1,0 +1,86 @@
+site_name: Curso FEniCSx/DOLFINx · MC-Andes
+site_url: https://mc-andes.github.io/fenicsx-course/
+site_description: Curso abierto y verificable de FEniCSx 0.11 en español
+repo_url: https://github.com/MC-Andes/fenicsx-course
+repo_name: MC-Andes/fenicsx-course
+edit_uri: edit/main/docs/
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep orange
+nav:
+  - Inicio: index.md
+  - Programa: syllabus.md
+  - Instalación: setup.md
+  - Módulos:
+      - 0 · Orientación: modules/00-orientation/index.md
+      - 1 · Variables y expresiones: modules/01-variables/index.md
+      - 2 · Mallas y etiquetas: modules/02-meshes/index.md
+      - 3 · Espacios y DOF: modules/03-spaces/index.md
+      - 4 · Poisson: modules/04-poisson/index.md
+      - 5 · Difusión transitoria: modules/05-diffusion/index.md
+      - 6 · Elasticidad: modules/06-elasticity/index.md
+      - 7 · Gmsh y materiales: modules/07-gmsh/index.md
+      - 8 · Stokes/Navier–Stokes: modules/08-stokes/index.md
+      - 9 · No linealidad: modules/09-nonlinear/index.md
+      - 10 · Multifísica: modules/10-multiphysics/index.md
+      - 11 · Solvers, MPI e I/O: modules/11-solvers/index.md
+  - Ejemplos: examples/index.md
+  - Práctica autónoma:
+      - Comprobación previa: practice/prior-knowledge.md
+      - Lista de proyecto: practice/project-checklist.md
+  - ALL-FEM:
+      - Política y catálogo: all-fem/index.md
+      - AF-S-01: all-fem/af-s-01.md
+      - AF-S-02: all-fem/af-s-02.md
+      - AF-S-03: all-fem/af-s-03.md
+      - AF-F-01: all-fem/af-f-01.md
+      - AF-F-03: all-fem/af-f-03.md
+      - AF-S-05: all-fem/af-s-05.md
+      - AF-M-01: all-fem/af-m-01.md
+  - Glosario: glossary.md
+  - Solución de problemas: troubleshooting.md
+  - Cómo estudiar el curso: self-study-guide.md
+  - Accesibilidad: accessibility.md
+  - Versiones y mantenimiento: version.md
+  - Referencias: references.md
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: [.]
+      check_paths: true
+  - pymdownx.superfences
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+  - stylesheets/extra.css
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/MC-Andes
+copyright: Copyright &copy; 2026 MC-Andes · Código MIT · Contenido CC BY 4.0
+strict: true

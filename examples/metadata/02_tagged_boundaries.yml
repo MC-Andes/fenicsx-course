@@ -1,0 +1,22 @@
+id: tagged-boundaries
+title: Fronteras etiquetadas de un rectángulo
+difficulty: inicial
+phenomenon: geometría y medidas
+pde: ninguna; integración de contorno
+concepts: [MeshTags, locate_entities_boundary, ds, MPI]
+prerequisites: [módulo 1]
+duration_minutes: 35
+cost: menos de 10 segundos
+serial: true
+parallel: true
+inputs: [rectángulo 2x1]
+outputs: [medida de cuatro fronteras, resumen JSON]
+units: longitud
+command: python examples/02_tagged_boundaries.py --quick --output results
+success: error máximo de medida menor que 1e-12
+tolerances: {measure_absolute: 1.0e-12}
+sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/generated/dolfinx.mesh.html]
+seed: null
+minimum_version: 0.11.0
+tested_version: 0.11.0.post0
+script: examples/02_tagged_boundaries.py

@@ -1,0 +1,105 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install lightweight tooling
+        run: python -m pip install -e ".[dev,docs]"
+      - name: Ruff
+        run: ruff check .
+      - name: Unit tests
+        run: pytest tests/unit
+      - name: Metadata and code links
+        run: python scripts/validate_examples.py
+      - name: Compile scripts
+        run: python -m compileall -q examples exercises scripts src
+      - name: Documentation
+        run: mkdocs build --strict
+
+  exercises-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Execute starter descriptions and solutions
+        run: |
+          python exercises/starter/01_objects.py
+          python exercises/starter/02_boundary_measure.py
+          python exercises/starter/03_force_balance.py
+          python exercises/solutions/01_objects.py
+          python exercises/solutions/02_boundary_measure.py
+          python exercises/solutions/03_force_balance.py
+
+  serial-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-file: conda-lock.yml
+          environment-name: mcandes-fenicsx-course
+          cache-environment: true
+          init-shell: bash
+      - name: Install course package
+        shell: micromamba-shell {0}
+        run: python -m pip install -e .
+      - name: Foundational examples
+        shell: micromamba-shell {0}
+        run: |
+          python examples/00_sanity_check.py --quick --output results
+          python examples/02_tagged_boundaries.py --quick --output results
+          python examples/04_poisson_manufactured.py --quick --output results
+          python examples/05_heat_diffusion.py --quick --output results
+          python examples/06_linear_elasticity.py --quick --write-fields --output results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: serial-smoke-results
+          path: results/*.json
+          retention-days: 7
+
+  parallel-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-file: conda-lock.yml
+          environment-name: mcandes-fenicsx-course
+          cache-environment: true
+          init-shell: bash
+      - name: Install course package
+        shell: micromamba-shell {0}
+        run: python -m pip install -e .
+      - name: MPI invariants and Poisson
+        shell: micromamba-shell {0}
+        run: |
+          mpirun -n 2 pytest tests/parallel
+          mpirun -n 2 python examples/00_sanity_check.py --quick --output results
+          mpirun -n 2 python examples/04_poisson_manufactured.py --quick --output results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: parallel-smoke-results
+          path: results/*.json
+          retention-days: 7

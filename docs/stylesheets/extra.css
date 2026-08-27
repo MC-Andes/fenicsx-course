@@ -1,0 +1,13 @@
+:root {
+  --md-primary-fg-color: #263d73;
+  --md-accent-fg-color: #c94c16;
+}
+
+.metric {
+  border-left: 0.25rem solid var(--md-accent-fg-color);
+  padding-left: 0.8rem;
+}
+
+code {
+  font-variant-ligatures: none;
+}

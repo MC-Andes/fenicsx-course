@@ -1,0 +1,22 @@
+id: poisson-manufactured
+title: Poisson con solución manufacturada
+difficulty: inicial
+phenomenon: difusión estacionaria
+pde: -laplacian(u)=f
+concepts: [forma débil, Dirichlet, LinearProblem, PETSc, convergencia]
+prerequisites: [módulo 3, integración por partes]
+duration_minutes: 70
+cost: menos de 60 segundos en modo quick
+serial: true
+parallel: true
+inputs: [mallas 8/16, elemento P1]
+outputs: [errores L2/H1, tasas, XDMF opcional, JSON]
+units: adimensional
+command: python examples/04_poisson_manufactured.py --quick --output results
+success: tasa L2>1.8, tasa H1>0.9 y KSP convergente
+tolerances: {l2_rate_minimum: 1.8, h1_rate_minimum: 0.9}
+sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_poisson.html]
+seed: null
+minimum_version: 0.11.0
+tested_version: 0.11.0.post0
+script: examples/04_poisson_manufactured.py

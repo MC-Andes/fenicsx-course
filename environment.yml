@@ -1,0 +1,24 @@
+name: mcandes-fenicsx-course
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - fenics-dolfinx=0.11.*
+  - mpich
+  - mpi4py
+  - petsc4py
+  - pyvista
+  - gmsh
+  - python-gmsh
+  - numpy
+  - pyyaml
+  - pytest
+  - pytest-cov
+  - ruff
+  - mypy
+  - mkdocs-material
+  - pymdown-extensions
+  - conda-lock
+  - pip
+  - pip:
+      - -e .

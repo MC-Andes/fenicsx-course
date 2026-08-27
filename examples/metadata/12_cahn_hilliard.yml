@@ -1,0 +1,23 @@
+id: cahn-hilliard
+title: Cahn–Hilliard mixto conservativo
+difficulty: avanzado
+phenomenon: separación de fases
+pde: dc/dt-div(grad(mu))=0; mu-df/dc+lambda*laplacian(c)=0
+concepts: [espacio mixto, SNES, conservación de masa, energía libre]
+prerequisites: [módulo 9, problemas transitorios]
+duration_minutes: 150
+cost: menos de 2 minutos en modo quick
+serial: true
+parallel: true
+inputs: [semilla analítica determinista, dt=5e-6]
+outputs: [masa, energía libre, iteraciones SNES, XDMF opcional, JSON]
+units: adimensional
+command: python examples/12_cahn_hilliard.py --quick --output results
+success: deriva de masa<1e-9 y energía no aumenta más de 1e-8
+tolerances: {mass_drift: 1.0e-9, energy_increase: 1.0e-8}
+sources: [https://doi.org/10.1016/j.cma.2026.118985, https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_cahn-hilliard.html]
+seed: 42
+minimum_version: 0.11.0
+tested_version: 0.11.0.post0
+script: examples/12_cahn_hilliard.py
+all_fem_id: AF-M-01

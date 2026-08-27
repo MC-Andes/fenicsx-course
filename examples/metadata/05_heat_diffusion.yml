@@ -1,0 +1,22 @@
+id: heat-diffusion
+title: Difusión de calor con Euler implícito
+difficulty: intermedio
+phenomenon: conducción transitoria
+pde: du/dt-laplacian(u)=0
+concepts: [Euler implícito, Function, Constant, ciclo temporal, energía]
+prerequisites: [módulo 4]
+duration_minutes: 70
+cost: menos de 60 segundos en modo quick
+serial: true
+parallel: true
+inputs: [tiempo final 0.05, condición sinusoidal]
+outputs: [error L2, energía, XDMF opcional, JSON]
+units: adimensional
+command: python examples/05_heat_diffusion.py --quick --output results
+success: error L2<0.03, energía decreciente y KSP convergente
+tolerances: {l2_error: 0.03, energy_increase: 1.0e-12}
+sources: [https://jsdokken.com/dolfinx-tutorial/chapter2/diffusion_code.html]
+seed: null
+minimum_version: 0.11.0
+tested_version: 0.11.0.post0
+script: examples/05_heat_diffusion.py

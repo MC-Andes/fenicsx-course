@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Si usa este curso, cite esta versión y las fuentes del ejemplo correspondiente."
+title: "Curso FEniCSx/DOLFINx de MC-Andes"
+type: software
+authors:
+  - name: MC-Andes
+    affiliation: Universidad de los Andes
+version: 0.1.0
+date-released: 2026-08-27
+license: MIT
+repository-code: https://github.com/MC-Andes/fenicsx-course
+url: https://mc-andes.github.io/fenicsx-course/
+keywords:
+  - FEniCSx
+  - DOLFINx
+  - finite elements
+  - computational mechanics

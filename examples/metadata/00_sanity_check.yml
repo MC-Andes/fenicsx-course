@@ -1,0 +1,22 @@
+id: sanity-check
+title: Comprobación del entorno FEniCSx
+difficulty: inicial
+phenomenon: arquitectura de software
+pde: ninguna; construcción de malla
+concepts: [DOLFINx, MPI, versiones, malla]
+prerequisites: [terminal, Python básico]
+duration_minutes: 15
+cost: menos de 5 segundos
+serial: true
+parallel: true
+inputs: [tamaño fijo 2x2]
+outputs: [resumen JSON]
+units: adimensional
+command: python examples/00_sanity_check.py --output results
+success: ocho celdas globales en uno o más procesos
+tolerances: {cell_count: 0.5}
+sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/]
+seed: null
+minimum_version: 0.11.0
+tested_version: 0.11.0.post0
+script: examples/00_sanity_check.py

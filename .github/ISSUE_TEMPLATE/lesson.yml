@@ -1,0 +1,23 @@
+name: Nueva lección o ejemplo
+description: Proponer material docente verificable
+title: "lesson: "
+labels: [content]
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objetivo y prerrequisitos
+    validations:
+      required: true
+  - type: textarea
+    id: formulation
+    attributes:
+      label: Formulación y fuentes
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Criterio cuantitativo de éxito
+    validations:
+      required: true

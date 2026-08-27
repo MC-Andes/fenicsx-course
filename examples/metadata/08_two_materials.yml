@@ -1,0 +1,23 @@
+id: two-materials
+title: Placa con dos materiales adheridos
+difficulty: intermedio
+phenomenon: elasticidad heterogénea
+pde: -div(sigma_i(u))=0 por subdominio
+concepts: [MeshTags de celda, dx marcado, interfaz, balance]
+prerequisites: [módulo 6]
+duration_minutes: 90
+cost: menos de 60 segundos en modo quick
+serial: true
+parallel: true
+inputs: [E1=100, E2=400, nu=0.3]
+outputs: [salto de desplazamiento, reacción, JSON]
+units: sistema consistente adimensional
+command: python examples/08_two_materials.py --quick --output results
+success: salto L2<1e-10 y error de balance<1e-8
+tolerances: {displacement_jump: 1.0e-10, force_balance_relative: 1.0e-8}
+sources: [https://doi.org/10.1016/j.cma.2026.118985, https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/generated/dolfinx.mesh.html]
+seed: null
+minimum_version: 0.11.0
+tested_version: 0.11.0.post0
+script: examples/08_two_materials.py
+all_fem_id: AF-S-03

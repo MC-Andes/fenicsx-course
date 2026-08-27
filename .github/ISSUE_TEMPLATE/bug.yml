@@ -1,0 +1,25 @@
+name: Error reproducible
+description: Reportar un fallo técnico o numérico
+title: "bug: "
+labels: [bug]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Descripción
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproducción mínima
+      description: Incluya comando, salida JSON, plataforma y número de procesos MPI.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versiones
+      placeholder: DOLFINx 0.11.0.post0, Python 3.12, macOS/Linux
+    validations:
+      required: true
