@@ -9,7 +9,8 @@ y el proyecto usa [Semantic Versioning](https://semver.org/lang/es/).
 
 - Mapa del curso, fundamentos matemáticos, rutas de sólidos/fluidos y una
   página independiente para Navier–Stokes.
-- Página de equipo y créditos con un espacio de perfil para Nicolas Useche.
+- Página de equipo y créditos con el perfil autorizado de Nicolas Andres Useche
+  Castillo y enlaces a ORCID, LinkedIn y GitHub.
 
 ### Changed
 
