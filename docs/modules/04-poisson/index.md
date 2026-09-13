@@ -1,6 +1,13 @@
-# Módulo 4 · De la PDE a la forma débil: Poisson
+# Lección 2 · Primer problema completo: Poisson
 
-**Nivel:** inicial · **Tiempo:** 4 h · **Prerrequisitos:** módulos 1–3, integración por partes.
+**Nivel:** inicial · **Tiempo:** 3 h · **Prerrequisitos:** lecciones 0–1.
+
+## Por qué Poisson aparece primero
+
+Poisson reúne todas las piezas de una simulación sin introducir campos
+vectoriales, tiempo o no linealidad. Primero ejecutarás el ciclo completo;
+las lecciones 3–5 regresan a objetos, mallas y espacios para explicarlos con
+detalle. No necesitas memorizar cada llamada antes de comenzar.
 
 ## Objetivos
 
@@ -42,9 +49,22 @@ Multiplicar por (v\in H_0^1), integrar y aplicar Green:
 
 ## Ejemplo e inspección
 
-Ejecuta `python examples/04_poisson_manufactured.py --quick --output results`.
+Ejecuta `python examples/01_poisson_manufactured.py --quick --output results`.
 Inspecciona celdas globales, DOF, facetas de frontera y el JSON de cada
 refinamiento. Usa `--write-fields` solo después de que la validación numérica pase.
+
+## El pipeline de ocho pasos
+
+| Paso | Pregunta | Dónde profundizar |
+| ---: | --- | --- |
+| 1 | ¿cuál es el dominio? | lección 4 |
+| 2 | ¿qué espacio aproxima $u$? | lección 5 |
+| 3 | ¿qué datos cambian? | lección 3 |
+| 4 | ¿cuál es la forma débil? | lección 1 |
+| 5 | ¿qué frontera fija valores? | lección 4 |
+| 6 | ¿qué sistema resuelve PETSc? | herramientas transversales |
+| 7 | ¿cómo se mide el error? | lección 5 |
+| 8 | ¿qué se conserva como evidencia? | repertorio verificable |
 
 ## Solver
 
@@ -85,3 +105,8 @@ Conserva una porción Dirichlet o controla el nullspace constante.
 
 [Demo oficial Poisson 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_poisson.html).
 La formulación manufacturada, estudio dual L2/H1 y salida JSON son del curso.
+
+---
+
+**Anterior:** [matemática mínima y forma débil](../../foundations/weak-forms.md) ·
+**Siguiente:** [objetos de DOLFINx y UFL](../01-variables/index.md)

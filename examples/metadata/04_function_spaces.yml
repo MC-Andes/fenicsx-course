@@ -4,7 +4,7 @@ difficulty: inicial
 phenomenon: discretización de campos
 pde: ninguna; inspección de grados de libertad
 concepts: [Basix, functionspace, mixed_element, collapse, DOF]
-prerequisites: [módulo 2]
+prerequisites: [lecciones 3–4]
 duration_minutes: 40
 cost: menos de 10 segundos
 serial: true
@@ -12,11 +12,11 @@ parallel: true
 inputs: [malla triangular]
 outputs: [conteos globales de DOF, resumen JSON]
 units: adimensional
-command: python examples/03_function_spaces.py --quick --output results
+command: python examples/04_function_spaces.py --quick --output results
 success: jerarquía coherente de dimensiones y mapa de subespacio no vacío
 tolerances: {minimum_mapping_size: 1.0}
 sources: [https://docs.fenicsproject.org/basix/v0.11.0/python/]
 seed: null
 minimum_version: 0.11.0
 tested_version: 0.11.0.post0
-script: examples/03_function_spaces.py
+script: examples/04_function_spaces.py

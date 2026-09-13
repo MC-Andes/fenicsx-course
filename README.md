@@ -6,10 +6,12 @@ conserva los términos técnicos en inglés cuando ayudan a consultar la API.
 
 ## Estado
 
-La versión `0.1.1` contiene los doce módulos, trece ejemplos canónicos
-ejecutables, ejercicios, pruebas numéricas, documentación y flujos de
-CI/publicación. El repertorio solo presenta problemas con código incluido,
-criterio cuantitativo de éxito y ejecución comprobable.
+La rama actual contiene trece ejemplos canónicos, ejercicios, pruebas
+numéricas, documentación y flujos de CI/publicación. La ruta renovada comienza
+con matemática mínima y un solve completo de Poisson; después explica objetos,
+mallas y espacios, y abre recorridos de calor, sólidos, fluidos y multifísica.
+El repertorio solo presenta problemas con código incluido, criterio cuantitativo
+de éxito y ejecución comprobable.
 
 ## Instalación nativa
 
@@ -30,7 +32,10 @@ escriben un resumen JSON en el directorio indicado por `--output`.
 ## Estructura
 
 - `examples/`: fuente única de las demostraciones completas.
-- `docs/modules/`: recorrido pedagógico de módulos 0 a 11.
+- `docs/learning-path.md`: mapa, dependencias y rutas abreviadas.
+- `docs/foundations/`: matemática mínima antes del primer solve.
+- `docs/modules/`: lecciones del núcleo y de cada fenómeno.
+- `docs/tracks/`: puentes conceptuales para sólidos y fluidos.
 - `exercises/`: enunciados y soluciones separados.
 - `src/mcandes_fenicsx/`: utilidades pequeñas de metadatos, mallas y
   verificación MPI-safe.
@@ -42,6 +47,18 @@ El código original se distribuye bajo MIT; véase [`LICENSE-CODE`](LICENSE-CODE
 El texto, las figuras y el material didáctico original se distribuyen bajo CC BY
 4.0; véase [`LICENSE-CONTENT`](LICENSE-CONTENT). Cada activo de terceros conserva
 su atribución específica.
+
+## Ruta recomendada
+
+1. instalación y sanity check;
+2. fundamentos matemáticos;
+3. primer Poisson completo;
+4. objetos, mallas, fronteras, espacios y convergencia;
+5. una ruta por física;
+6. PETSc, MPI, I/O y proyecto libre.
+
+El sitio publicado contiene el
+[mapa navegable](https://mc-andes.github.io/fenicsx-course/learning-path/).
 
 ## Cita
 

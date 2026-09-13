@@ -1,7 +1,7 @@
 # Comprobación previa de conocimientos
 
 Esta página es privada para ti: no envía respuestas, no asigna una nota y no
-bloquea ningún módulo. Úsala para decidir qué repasar antes de empezar.
+bloquea ninguna lección. Úsala para decidir qué repasar antes de empezar.
 
 Intenta resolver sin consultar fuentes:
 
@@ -15,8 +15,8 @@ Intenta resolver sin consultar fuentes:
 ## Pistas para decidir el siguiente paso
 
 - Si 1 o 5 no son familiares, repasa Python, NumPy y terminal.
-- Si 2–4 no son familiares, repasa cálculo vectorial y PDE antes del módulo 4.
-- Si 6 no es familiar, puedes empezar; el módulo 0 presenta el modelo MPI.
+- Si 2–4 no son familiares, completa con calma la lección 1 antes de Poisson.
+- Si 6 no es familiar, puedes empezar; la lección 0 presenta el modelo MPI.
 
 Una forma esperada para 3 es
 (\int u'v'\,dx=\int fv\,dx) cuando el término de frontera desaparece. En 6,

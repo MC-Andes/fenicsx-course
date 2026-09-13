@@ -1,177 +1,90 @@
-# Repertorio verificable de problemas
+# Repertorio verificable de ejemplos
 
-Aquí solo se catalogan problemas cuyo código ejecutable está incluido y cuya
-comprobación se ejecuta localmente y en CI. Los scripts son la única fuente
-ejecutable. Cada uno acepta `--quick`, `--output DIR` y `--write-fields` cuando
-genera campos. Las fichas completas viven en `examples/metadata/`.
+Este repertorio te ayuda a encontrar una implementación después de estudiar su
+lección. No es una ruta paralela ni una página para leer de arriba abajo.
 
-| Ejemplo | Nivel | Evidencia principal |
-| --- | --- | --- |
-| [00 · Sanity check](#sanity-check) | Inicial | versiones y celdas globales |
-| [01 · Interpolación](#interpolacion) | Inicial | tasas P1/P2 |
-| [02 · Fronteras etiquetadas](#fronteras-etiquetadas) | Inicial | medidas de fronteras |
-| [03 · Espacios de funciones](#espacios-de-funciones) | Inicial | grados de libertad globales |
-| [04 · Poisson manufacturado](#poisson-manufacturado) | Inicial | tasas L2/H1 |
-| [05 · Difusión de calor](#difusion-de-calor) | Intermedio | error analítico y energía |
-| [06 · Elasticidad lineal](#elasticidad-lineal) | Intermedio | reacción y energía |
-| [07 · Placa con agujero](#placa-con-agujero) | Intermedio | concentración y malla |
-| [08 · Dos materiales](#dos-materiales) | Intermedio | continuidad y balance |
-| [09 · Canal de Stokes](#canal-de-stokes) | Intermedio | Poiseuille, caudal y divergencia |
-| [10 · Flujo alrededor de cilindro](#flujo-alrededor-de-cilindro) | Avanzado | Picard, arrastre y masa |
-| [11 · Hiperelasticidad](#hiperelasticidad) | Avanzado | SNES, energía y Jacobiano |
-| [12 · Cahn–Hilliard](#cahn-hilliard) | Avanzado | masa y energía libre |
+Cada script es la única fuente ejecutable, acepta `--output DIR`, produce un
+resumen JSON y declara un criterio cuantitativo. Usa `--quick` para una ejecución
+breve y `--write-fields` cuando el ejemplo permita exportar campos.
 
-## Ejemplos completos
+## Núcleo común
 
-Cada enlace del catálogo llega a una sección autocontenida. El código se
-incluye automáticamente desde el script canónico, por lo que la página y las
-pruebas siempre muestran la misma implementación.
+| # | Ejemplo | Estudia primero | Evidencia | Código |
+| ---: | --- | --- | --- | --- |
+| 00 | sanity check | [orientación](../modules/00-orientation/index.md) | versiones y celdas globales | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/00_sanity_check.py) |
+| 01 | Poisson manufacturado | [primer problema](../modules/04-poisson/index.md) | tasas L2/H1 | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/01_poisson_manufactured.py) |
+| 02 | interpolación P1/P2 | [objetos DOLFINx](../modules/01-variables/index.md) | tasas de interpolación | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/02_interpolation.py) |
+| 03 | fronteras etiquetadas | [mallas y fronteras](../modules/02-meshes/index.md) | medidas del contorno | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/03_tagged_boundaries.py) |
+| 04 | espacios de funciones | [elementos y espacios](../modules/03-spaces/index.md) | DOF globales | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/04_function_spaces.py) |
 
-### 00 · Sanity check { #sanity-check }
+## Transferencia de calor
 
-```bash
-python examples/00_sanity_check.py --output results
-```
+| # | Ejemplo | Estudia primero | Evidencia | Código |
+| ---: | --- | --- | --- | --- |
+| 05 | difusión transitoria | [lección 6](../modules/05-diffusion/index.md) | error analítico y energía | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/05_heat_diffusion.py) |
 
-```python title="examples/00_sanity_check.py"
---8<-- "examples/00_sanity_check.py"
-```
+## Mecánica de sólidos
 
-### 01 · Interpolación { #interpolacion }
+| # | Ejemplo | Estudia primero | Evidencia | Código |
+| ---: | --- | --- | --- | --- |
+| 06 | elasticidad lineal | [lección 7](../modules/06-elasticity/index.md) | reacción y energía | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/06_linear_elasticity.py) |
+| 07 | placa con agujero | [lección 8](../modules/07-gmsh/index.md) | concentración y malla | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/07_plate_with_hole.py) |
+| 08 | placa de dos materiales | [lección 8](../modules/07-gmsh/index.md) | continuidad y balance | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/08_two_materials.py) |
+| 09 | hiperelasticidad | [lección 9](../modules/09-nonlinear/index.md) | SNES, energía y $J$ | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/09_hyperelasticity.py) |
 
-```bash
-python examples/01_interpolation.py --quick --output results
-```
+## Mecánica de fluidos
 
-```python title="examples/01_interpolation.py"
---8<-- "examples/01_interpolation.py"
-```
+| # | Ejemplo | Estudia primero | Evidencia | Código |
+| ---: | --- | --- | --- | --- |
+| 10 | canal de Stokes | [lección 10](../modules/08-stokes/index.md) | Poiseuille, caudal y divergencia | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/10_stokes_channel.py) |
+| 11 | flujo alrededor de cilindro | [lección 11](../modules/navier-stokes/index.md) | Picard, arrastre y masa | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/11_cylinder_flow.py) |
 
-### 02 · Fronteras etiquetadas { #fronteras-etiquetadas }
+## Multifísica
+
+| # | Ejemplo | Estudia primero | Evidencia | Código |
+| ---: | --- | --- | --- | --- |
+| 12 | Cahn–Hilliard | [lección 12](../modules/10-multiphysics/index.md) | masa y energía libre | [`.py`](https://github.com/MC-Andes/fenicsx-course/blob/main/examples/12_cahn_hilliard.py) |
+
+## Ejecución
 
 ```bash
-python examples/02_tagged_boundaries.py --quick --output results
+python examples/01_poisson_manufactured.py --quick --output results
+python -m mcandes_fenicsx.validation_cli .
 ```
 
-```python title="examples/02_tagged_boundaries.py"
---8<-- "examples/02_tagged_boundaries.py"
-```
-
-### 03 · Espacios de funciones { #espacios-de-funciones }
-
-```bash
-python examples/03_function_spaces.py --quick --output results
-```
-
-```python title="examples/03_function_spaces.py"
---8<-- "examples/03_function_spaces.py"
-```
-
-### 04 · Poisson manufacturado { #poisson-manufacturado }
-
-```bash
-python examples/04_poisson_manufactured.py --quick --output results
-```
-
-```python title="examples/04_poisson_manufactured.py"
---8<-- "examples/04_poisson_manufactured.py"
-```
-
-### 05 · Difusión de calor { #difusion-de-calor }
-
-```bash
-python examples/05_heat_diffusion.py --quick --output results
-```
-
-```python title="examples/05_heat_diffusion.py"
---8<-- "examples/05_heat_diffusion.py"
-```
-
-### 06 · Elasticidad lineal { #elasticidad-lineal }
-
-```bash
-python examples/06_linear_elasticity.py --quick --output results
-```
-
-```python title="examples/06_linear_elasticity.py"
---8<-- "examples/06_linear_elasticity.py"
-```
-
-### 07 · Placa con agujero { #placa-con-agujero }
-
-```bash
-python examples/07_plate_with_hole.py --quick --output results
-```
-
-```python title="examples/07_plate_with_hole.py"
---8<-- "examples/07_plate_with_hole.py"
-```
-
-### 08 · Dos materiales { #dos-materiales }
-
-```bash
-python examples/08_two_materials.py --quick --output results
-```
-
-```python title="examples/08_two_materials.py"
---8<-- "examples/08_two_materials.py"
-```
-
-### 09 · Canal de Stokes { #canal-de-stokes }
-
-```bash
-python examples/09_stokes_channel.py --quick --output results
-```
-
-```python title="examples/09_stokes_channel.py"
---8<-- "examples/09_stokes_channel.py"
-```
-
-### 10 · Flujo alrededor de cilindro { #flujo-alrededor-de-cilindro }
-
-```bash
-python examples/10_cylinder_flow.py --quick --output results
-```
-
-```python title="examples/10_cylinder_flow.py"
---8<-- "examples/10_cylinder_flow.py"
-```
-
-### 11 · Hiperelasticidad { #hiperelasticidad }
-
-```bash
-python examples/11_hyperelasticity.py --quick --output results
-```
-
-```python title="examples/11_hyperelasticity.py"
---8<-- "examples/11_hyperelasticity.py"
-```
-
-### 12 · Cahn–Hilliard { #cahn-hilliard }
-
-```bash
-python examples/12_cahn_hilliard.py --quick --output results
-```
-
-```python title="examples/12_cahn_hilliard.py"
---8<-- "examples/12_cahn_hilliard.py"
-```
-
-## Esquema de salida
-
-Todos los JSON incluyen `example`, `dolfinx_version`, `mpi_size`,
+Los JSON incluyen `example`, `dolfinx_version`, `mpi_size`,
 `solver_converged` y `validation_passed`. Las pruebas comparan escalares,
-normas/tendencias y nunca archivos binarios bit a bit.
+normas y tendencias; nunca archivos binarios bit a bit.
+
+## Cómo leer un script
+
+Busca siempre los mismos ocho bloques:
+
+1. parámetros y comunicador;
+2. malla y etiquetas;
+3. elemento y espacio;
+4. datos, ensayo y prueba;
+5. forma débil;
+6. condiciones y solver;
+7. verificación;
+8. salida JSON o campos.
+
+No todos los archivos usan encabezados idénticos, pero deben conservar esa
+responsabilidad. El objetivo es reconocer el patrón y encontrar qué cambia con
+la física.
 
 ## Regla para ampliar el repertorio
 
 Un problema nuevo aparece aquí únicamente cuando entrega, en el mismo cambio:
 
-1. ecuación, dominio, condiciones de frontera, parámetros y unidades;
-2. script completo en `examples/` y ficha en `examples/metadata/`;
+1. ecuación, dominio, condiciones, parámetros y unidades;
+2. script completo y metadata en `examples/metadata/`;
 3. criterio cuantitativo con tolerancia explícita;
-4. resultado JSON reproducible y al menos una prueba automatizada;
-5. fuente técnica accesible y ejecución serial o MPI declarada.
+4. resultado reproducible y al menos una prueba automatizada;
+5. lección o sección que explique por qué el ejemplo ocupa ese lugar;
+6. fuente técnica y soporte serial/MPI declarado.
 
-Una lista externa de enunciados puede orientar ideas futuras, pero no se
-presenta como parte del curso hasta que exista código comprobable aquí.
+---
+
+**Empieza por:** [mapa del curso](../learning-path.md) ·
+**Practica con:** [ejercicios y soluciones](../practice/exercises.md)

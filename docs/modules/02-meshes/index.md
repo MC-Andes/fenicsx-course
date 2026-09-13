@@ -1,6 +1,13 @@
-# Módulo 2 · Mallas sencillas y etiquetas
+# Lección 4 · Mallas, etiquetas y condiciones de frontera
 
-**Nivel:** inicial · **Tiempo:** 3 h · **Prerrequisitos:** módulo 1, geometría básica.
+**Nivel:** inicial · **Tiempo:** 3 h · **Prerrequisitos:** lecciones 2–3, geometría básica.
+
+## Conexión con Poisson
+
+En el primer solve la frontera completa tenía Dirichlet homogénea. Aquí se
+divide el contorno en regiones con significado y se comprueba cada etiqueta
+antes de usarla en una condición. Esta práctica se reutiliza en calor, sólidos
+y fluidos.
 
 ## Objetivos
 
@@ -32,7 +39,7 @@ No hay PDE. La identidad geométrica verificable es
 
 ## Ejemplo e inspección
 
-Ejecuta `python examples/02_tagged_boundaries.py --quick --output results`.
+Ejecuta `python examples/03_tagged_boundaries.py --quick --output results`.
 Examina `tags.indices`, `tags.values` y `tags.find(marker)`. La utilidad común
 ordena índices y rechaza una faceta asignada dos veces.
 
@@ -73,3 +80,8 @@ cambia, revisa marcadores y reducción antes de culpar la geometría.
 
 [API de mallas DOLFINx 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/generated/dolfinx.mesh.html).
 Código original MIT; contenido CC BY 4.0.
+
+---
+
+**Anterior:** [objetos de DOLFINx y UFL](../01-variables/index.md) ·
+**Siguiente:** [elementos, espacios y convergencia](../03-spaces/index.md)

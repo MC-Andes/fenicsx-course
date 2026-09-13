@@ -1,6 +1,12 @@
-# Módulo 9 · Formulaciones no lineales
+# Lección 9 · Hiperelasticidad y solución no lineal
 
-**Nivel:** avanzado · **Tiempo:** 5 h · **Prerrequisitos:** módulo 6, cálculo tensorial.
+**Nivel:** avanzado · **Tiempo:** 5 h · **Prerrequisitos:** lección 7, cálculo tensorial.
+
+## Qué cambia frente a elasticidad lineal
+
+La forma depende del estado actual. Ya no se ensambla una sola matriz: UFL
+deriva el residual y el Jacobiano, SNES itera y la carga se aplica por
+incrementos. La verificación debe incluir convergencia y orientación positiva.
 
 ## Objetivos
 
@@ -21,7 +27,7 @@ cero a la izquierda y (PN=T) a la derecha. (F=I+\nabla u), (J=\det F>0).
 
 \[
 \psi=\frac\mu2(I_C-2)-\mu\ln J+\frac\lambda2(\ln J)^2,
-\quad R(u;v)=D_u\left[\int\psi\,dX-\int T\cdot u\,dS\right][v]=0.
+\quad R(u;v)=D_u\left[\int\psi\,dX-\int T\cdot u\,dS\right]v=0.
 \]
 
 El Jacobiano tangente es (D_uR(u;\delta u,v)) y UFL lo deriva.
@@ -38,7 +44,7 @@ El Jacobiano tangente es (D_uR(u;\delta u,v)) y UFL lo deriva.
 
 ## Ejemplo e inspección
 
-Ejecuta `python examples/11_hyperelasticity.py --quick --output results`. Revisa
+Ejecuta `python examples/09_hyperelasticity.py --quick --output results`. Revisa
 iteraciones por incremento, (J_{min}), energía, reacción y desplazamiento.
 
 ## Solver
@@ -80,3 +86,9 @@ el bloqueo relajando una tolerancia.
 [API `NonlinearProblem` 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/generated/dolfinx.fem.petsc.html).
 La implementación hiperelástica y sus verificaciones son originales del curso
 y están disponibles bajo MIT.
+
+---
+
+**Anterior:** [Gmsh y materiales](../07-gmsh/index.md) ·
+**Siguiente:** [ruta de fluidos](../../tracks/fluids.md) o
+[Cahn–Hilliard](../10-multiphysics/index.md)

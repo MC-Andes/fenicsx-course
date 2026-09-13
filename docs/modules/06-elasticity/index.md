@@ -1,6 +1,12 @@
-# Módulo 6 · Elasticidad lineal y posproceso
+# Lección 7 · Elasticidad lineal y posproceso
 
-**Nivel:** intermedio · **Tiempo:** 4 h · **Prerrequisitos:** módulo 4, tensores y mecánica de sólidos.
+**Nivel:** intermedio · **Tiempo:** 4 h · **Prerrequisitos:** lecciones 2–5, tensores y mecánica de sólidos.
+
+## Qué cambia frente a Poisson
+
+La incógnita ahora es vectorial y `grad(u)` es tensorial. El flujo escalar se
+convierte en tracción y la energía interna usa tensión contra deformación. La
+estructura malla → espacio → forma → BC → solve → verificación se conserva.
 
 ## Objetivos
 
@@ -89,3 +95,8 @@ La implementación del curso se contrasta con el
 [demo oficial de elasticidad DOLFINx 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_elasticity.html).
 El código, los parámetros y la comprobación de equilibrio están incluidos en
 `examples/06_linear_elasticity.py`.
+
+---
+
+**Anterior:** [ruta de sólidos](../../tracks/solids.md) ·
+**Siguiente:** [Gmsh, huecos y materiales](../07-gmsh/index.md)

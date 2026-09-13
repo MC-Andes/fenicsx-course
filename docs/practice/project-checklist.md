@@ -29,5 +29,5 @@ parte de tu simulación todavía necesita trabajo.
 - [ ] Cité fuentes y revisé licencias de activos/código.
 - [ ] La visualización incluye unidades, escala y descripción textual.
 
-Si una casilla queda vacía, vuelve al módulo relacionado o consulta la solución
+Si una casilla queda vacía, vuelve a la lección relacionada o consulta la solución
 después de intentar una explicación propia.

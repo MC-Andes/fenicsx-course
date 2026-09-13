@@ -1,6 +1,12 @@
-# Módulo 1 · Variables, funciones y expresiones
+# Lección 3 · Objetos de DOLFINx y expresiones UFL
 
-**Nivel:** inicial · **Tiempo:** 2 h · **Prerrequisitos:** módulo 0, NumPy.
+**Nivel:** inicial · **Tiempo:** 2 h · **Prerrequisitos:** lección 2, NumPy.
+
+## Conexión con Poisson
+
+Ya viste `Constant`, `TrialFunction`, `TestFunction` y la solución del problema.
+Ahora separarás sus responsabilidades. La meta no es aprender más sintaxis, sino
+evitar usar un objeto simbólico donde se necesitan coeficientes numéricos.
 
 ## Objetivos
 
@@ -33,7 +39,7 @@ resuelve.
 
 ## Ejemplo mínimo e inspección
 
-Ejecuta `python examples/01_interpolation.py --quick --output results`. Inspecciona
+Ejecuta `python examples/02_interpolation.py --quick --output results`. Inspecciona
 el tamaño propio con `V.dofmap.index_map.size_local`, el bloque con
 `index_map_bs` y los fantasmas con `num_ghosts`. Tras asignar, llama
 `field.x.scatter_forward()`.
@@ -78,3 +84,8 @@ esperada para una función suave es 4 en L2. Usa la reducción de
 DOLFINx 0.11.0.post0. Implementación original MIT, página CC BY 4.0. Se inspira
 en el demo oficial de interpolación, pero añade comparación P1/P2, reducción
 global, metadata y criterio obligatorio.
+
+---
+
+**Anterior:** [primer problema — Poisson](../04-poisson/index.md) ·
+**Siguiente:** [mallas, etiquetas y fronteras](../02-meshes/index.md)

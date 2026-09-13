@@ -4,7 +4,7 @@ difficulty: intermedio
 phenomenon: conducción transitoria
 pde: du/dt-laplacian(u)=0
 concepts: [Euler implícito, Function, Constant, ciclo temporal, energía]
-prerequisites: [módulo 4]
+prerequisites: [lecciones 2–5]
 duration_minutes: 70
 cost: menos de 60 segundos en modo quick
 serial: true

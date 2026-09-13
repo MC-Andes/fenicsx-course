@@ -4,7 +4,7 @@ difficulty: avanzado
 phenomenon: flujo incompresible con obstáculo
 pde: rho(u.grad)u-div(sigma)=0; div(u)=0
 concepts: [Gmsh, Picard, Navier-Stokes, arrastre, balance de masa]
-prerequisites: [módulo 8]
+prerequisites: [lección 10]
 duration_minutes: 150
 cost: menos de 2 minutos en modo quick
 serial: true
@@ -12,11 +12,11 @@ parallel: true
 inputs: [Re=3, cilindro de radio 0.05]
 outputs: [arrastre, caudales, iteraciones Picard, XDMF opcional, JSON]
 units: sistema consistente adimensional
-command: python examples/10_cylinder_flow.py --quick --output results
+command: python examples/11_cylinder_flow.py --quick --output results
 success: Picard converge y desbalance de caudal<4 por ciento
 tolerances: {mass_balance_relative: 0.04, picard_relative: 2.0e-5}
 sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_stokes.html]
 seed: null
 minimum_version: 0.11.0
 tested_version: 0.11.0.post0
-script: examples/10_cylinder_flow.py
+script: examples/11_cylinder_flow.py
