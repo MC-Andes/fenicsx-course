@@ -4,7 +4,7 @@ difficulty: intermedio
 phenomenon: concentración de tensiones
 pde: -div(sigma(u))=0 en dominio perforado
 concepts: [Gmsh, grupos físicos, MeshTags, von Mises, estudio de malla]
-prerequisites: [módulo 6]
+prerequisites: [lecciones 4 y 7]
 duration_minutes: 110
 cost: menos de 90 segundos en modo quick
 serial: true

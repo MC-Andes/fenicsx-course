@@ -5,6 +5,22 @@ y el proyecto usa [Semantic Versioning](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+### Added
+
+- Mapa del curso, fundamentos matemáticos, rutas de sólidos/fluidos y una
+  página independiente para Navier–Stokes.
+- Página de equipo y créditos con un espacio de perfil para Nicolas Useche.
+
+### Changed
+
+- La secuencia comienza con forma débil y un solve completo de Poisson; objetos,
+  mallas y espacios se estudian después en contexto.
+- El repertorio deja de insertar trece scripts completos y funciona como índice
+  por fenómeno con enlaces a lecciones y código.
+- Los ejemplos se renumeran para coincidir con la progresión pedagógica.
+- La interfaz adopta una identidad editorial marfil, verde y terracota inspirada
+  en el dossier del investigador principal, con tipografía serif/sans.
+
 ## [0.1.1] - 2026-08-27
 
 ### Changed

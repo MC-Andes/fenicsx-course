@@ -1,14 +1,16 @@
-"""Validador instalable para fichas, scripts y referencias documentales."""
+"""Validador instalable para fichas, scripts y enlaces documentales."""
 
 from __future__ import annotations
 
 import argparse
 import re
 from pathlib import Path
+from urllib.parse import unquote
 
 from mcandes_fenicsx.metadata import load_metadata
 
 _EXAMPLE_REFERENCE = re.compile(r"examples/[A-Za-z0-9_./-]+\.py")
+_MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 
 
 def validate_repository(root: Path) -> list[str]:
@@ -44,6 +46,15 @@ def validate_repository(root: Path) -> list[str]:
         for reference in _EXAMPLE_REFERENCE.findall(text):
             if not (root / reference).is_file():
                 errors.append(f"{doc.relative_to(root)} referencia ruta ausente: {reference}")
+        for raw_target in _MARKDOWN_LINK.findall(text):
+            target = raw_target.split("#", maxsplit=1)[0]
+            if not target or target.startswith(("http://", "https://", "mailto:")):
+                continue
+            candidate = (doc.parent / unquote(target)).resolve()
+            if not candidate.exists():
+                errors.append(
+                    f"{doc.relative_to(root)} referencia enlace local ausente: {raw_target}"
+                )
     return errors
 
 
@@ -56,7 +67,7 @@ def main() -> int:
         for error in errors:
             print(f"ERROR: {error}")
         return 1
-    print("Fichas, scripts y referencias documentales: OK")
+    print("Fichas, scripts y enlaces documentales: OK")
     return 0
 
 

@@ -17,9 +17,9 @@ ROOT = Path(__file__).resolve().parents[2]
     "script,identifier",
     [
         ("00_sanity_check.py", "sanity-check"),
-        ("02_tagged_boundaries.py", "tagged-boundaries"),
-        ("03_function_spaces.py", "function-spaces"),
-        ("04_poisson_manufactured.py", "poisson-manufactured"),
+        ("01_poisson_manufactured.py", "poisson-manufactured"),
+        ("03_tagged_boundaries.py", "tagged-boundaries"),
+        ("04_function_spaces.py", "function-spaces"),
         ("05_heat_diffusion.py", "heat-diffusion"),
         ("06_linear_elasticity.py", "linear-elasticity"),
     ],

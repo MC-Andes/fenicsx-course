@@ -10,38 +10,53 @@ theme:
   features:
     - navigation.sections
     - navigation.indexes
+    - navigation.path
     - navigation.top
     - navigation.footer
+    - toc.follow
     - content.code.copy
     - content.tabs.link
   palette:
     - scheme: default
-      primary: indigo
-      accent: deep orange
+      primary: custom
+      accent: custom
 nav:
   - Inicio: index.md
-  - Programa: syllabus.md
-  - Instalación: setup.md
-  - Módulos:
+  - Empieza aquí:
+      - Mapa y rutas: learning-path.md
+      - Programa: syllabus.md
+      - Instalación: setup.md
+      - Comprobación previa: practice/prior-knowledge.md
+      - Cómo estudiar: self-study-guide.md
+  - Núcleo común:
       - 0 · Orientación: modules/00-orientation/index.md
-      - 1 · Variables y expresiones: modules/01-variables/index.md
-      - 2 · Mallas y etiquetas: modules/02-meshes/index.md
-      - 3 · Espacios y DOF: modules/03-spaces/index.md
-      - 4 · Poisson: modules/04-poisson/index.md
-      - 5 · Difusión transitoria: modules/05-diffusion/index.md
-      - 6 · Elasticidad: modules/06-elasticity/index.md
-      - 7 · Gmsh y materiales: modules/07-gmsh/index.md
-      - 8 · Stokes/Navier–Stokes: modules/08-stokes/index.md
-      - 9 · No linealidad: modules/09-nonlinear/index.md
-      - 10 · Multifísica: modules/10-multiphysics/index.md
-      - 11 · Solvers, MPI e I/O: modules/11-solvers/index.md
+      - 1 · Matemática y forma débil: foundations/weak-forms.md
+      - 2 · Primer problema — Poisson: modules/04-poisson/index.md
+      - 3 · Objetos de DOLFINx: modules/01-variables/index.md
+      - 4 · Mallas, etiquetas y fronteras: modules/02-meshes/index.md
+      - 5 · Elementos, espacios y convergencia: modules/03-spaces/index.md
+  - Transferencia de calor:
+      - 6 · Difusión transitoria: modules/05-diffusion/index.md
+  - Mecánica de sólidos:
+      - Ruta de sólidos: tracks/solids.md
+      - 7 · Elasticidad lineal: modules/06-elasticity/index.md
+      - 8 · Gmsh y materiales: modules/07-gmsh/index.md
+      - 9 · Hiperelasticidad: modules/09-nonlinear/index.md
+  - Mecánica de fluidos:
+      - Ruta de fluidos: tracks/fluids.md
+      - 10 · Stokes: modules/08-stokes/index.md
+      - 11 · Navier–Stokes: modules/navier-stokes/index.md
+  - Multifísica:
+      - 12 · Cahn–Hilliard: modules/10-multiphysics/index.md
+  - Herramientas transversales:
+      - PETSc, MPI e I/O: modules/11-solvers/index.md
   - Repertorio verificable: examples/index.md
   - Práctica autónoma:
-      - Comprobación previa: practice/prior-knowledge.md
+      - Ejercicios y soluciones: practice/exercises.md
       - Lista de proyecto: practice/project-checklist.md
+  - Equipo y créditos: team.md
   - Glosario: glossary.md
   - Solución de problemas: troubleshooting.md
-  - Cómo estudiar el curso: self-study-guide.md
   - Accesibilidad: accessibility.md
   - Versiones y mantenimiento: version.md
   - Referencias: references.md
@@ -68,8 +83,6 @@ extra_javascript:
 extra_css:
   - stylesheets/extra.css
 extra:
-  version:
-    provider: mike
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/MC-Andes

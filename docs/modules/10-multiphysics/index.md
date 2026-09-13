@@ -1,6 +1,12 @@
-# Módulo 10 · Acoplamiento y multifísica
+# Lección 12 · Cahn–Hilliard y multifísica
 
-**Nivel:** avanzado · **Tiempo:** 5 h · **Prerrequisitos:** módulos 5 y 9.
+**Nivel:** avanzado · **Tiempo:** 5 h · **Prerrequisitos:** lecciones 6 y 9.
+
+## Por qué esta lección cierra las rutas físicas
+
+Cahn–Hilliard reúne estado temporal, espacio mixto y solve no lineal. Ninguna de
+esas piezas es nueva por separado; el reto es acoplarlas sin perder masa ni
+aceptar una evolución energéticamente incorrecta.
 
 ## Objetivos
 
@@ -87,3 +93,8 @@ particionado define criterio de interfaz además de criterios internos.
 [Demo Cahn–Hilliard 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_cahn-hilliard.html).
 El ejemplo del curso usa una perturbación analítica MPI-determinista e incluye
 comprobaciones obligatorias de masa y energía libre.
+
+---
+
+**Anterior:** [hiperelasticidad](../09-nonlinear/index.md) ·
+**Siguiente:** [PETSc, MPI e I/O](../11-solvers/index.md)

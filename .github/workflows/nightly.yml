@@ -39,7 +39,7 @@ jobs:
         run: |
           set -euo pipefail
           mpirun -n 2 python examples/06_linear_elasticity.py --quick --output results/mpi2
-          mpirun -n 2 python examples/09_stokes_channel.py --quick --output results/mpi2
+          mpirun -n 2 python examples/10_stokes_channel.py --quick --output results/mpi2
           mpirun -n 2 python examples/12_cahn_hilliard.py --quick --output results/mpi2
       - uses: actions/upload-artifact@v7
         if: always()

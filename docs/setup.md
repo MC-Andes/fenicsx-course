@@ -17,6 +17,8 @@ El entorno fija Python 3.12 y `fenics-dolfinx=0.11.*`. Para reproducir exactamen
 el entorno validado, usa el lock correspondiente y después instala el paquete
 local del curso:
 
+<!-- markdownlint-disable MD046 -->
+
 === "Ubuntu x86_64"
 
     ```bash
@@ -30,6 +32,8 @@ local del curso:
     micromamba create -n mcandes-fenicsx-course -f conda-osx-arm64.lock
     micromamba run -n mcandes-fenicsx-course python -m pip install -e .
     ```
+
+<!-- markdownlint-enable MD046 -->
 
 `conda-lock.yml` fija el entorno Linux usado por CI. `conda-osx-arm64.lock` es
 el export explícito, con hashes, del entorno en el que se ejecutó la batería
@@ -46,7 +50,7 @@ La imagen de la release está fijada por etiqueta y digest en
 docker build -f containers/Dockerfile -t mcandes/fenicsx-course:0.1.1 .
 docker run --rm -v "$PWD/results:/course/results" mcandes/fenicsx-course:0.1.1
 docker run --rm -v "$PWD:/course" -w /course mcandes/fenicsx-course:0.1.1 \
-  mpirun -n 2 python3 examples/04_poisson_manufactured.py --quick --output results
+  mpirun -n 2 python3 examples/01_poisson_manufactured.py --quick --output results
 ```
 
 ## Comprobación esperada

@@ -4,7 +4,7 @@ difficulty: intermedio
 phenomenon: mecánica de sólidos
 pde: -div(sigma(u))=0
 concepts: [espacio vectorial, tensión plana, tracción, reacción, energía]
-prerequisites: [módulo 4, mecánica de sólidos]
+prerequisites: [lecciones 2–5, mecánica de sólidos]
 duration_minutes: 90
 cost: menos de 60 segundos en modo quick
 serial: true

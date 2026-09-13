@@ -4,7 +4,7 @@ difficulty: avanzado
 phenomenon: sólidos no lineales
 pde: Div(P)=0 con energía neo-Hookeana
 concepts: [residuo, derivación automática, SNES, carga incremental, Jacobiano]
-prerequisites: [módulo 6, cálculo tensorial]
+prerequisites: [lección 7, cálculo tensorial]
 duration_minutes: 140
 cost: menos de 2 minutos en modo quick
 serial: true
@@ -12,11 +12,11 @@ parallel: true
 inputs: [E=100, nu=0.3, carga final 5]
 outputs: [iteraciones SNES, J mínimo, reacción, energía, JSON]
 units: sistema consistente adimensional
-command: python examples/11_hyperelasticity.py --quick --output results
+command: python examples/09_hyperelasticity.py --quick --output results
 success: SNES converge, J mínimo>0.5 y balance<2e-6
 tolerances: {minimum_jacobian: 0.5, force_balance_relative: 2.0e-6}
 sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/generated/dolfinx.fem.petsc.html]
 seed: null
 minimum_version: 0.11.0
 tested_version: 0.11.0.post0
-script: examples/11_hyperelasticity.py
+script: examples/09_hyperelasticity.py

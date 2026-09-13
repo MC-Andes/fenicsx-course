@@ -1,6 +1,12 @@
-# Módulo 7 · Gmsh, huecos y materiales múltiples
+# Lección 8 · Gmsh, huecos y materiales múltiples
 
-**Nivel:** intermedio · **Tiempo:** 5 h · **Prerrequisitos:** módulos 2 y 6.
+**Nivel:** intermedio · **Tiempo:** 5 h · **Prerrequisitos:** lecciones 4 y 7.
+
+## Qué cambia frente a la placa rectangular
+
+La formulación de elasticidad se conserva. Cambian la construcción del dominio,
+la identificación de fronteras y la asignación de propiedades por región. Esta
+separación ayuda a depurar geometría antes de culpar al solver.
 
 ## Objetivos
 
@@ -85,3 +91,8 @@ Clasifica curvas por bounding box y valida cardinalidades. Un valor estable de
 [Demo Gmsh 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_gmsh.html).
 Las geometrías, el código y los criterios de concentración/continuidad son
 originales del curso y están disponibles bajo MIT.
+
+---
+
+**Anterior:** [elasticidad lineal](../06-elasticity/index.md) ·
+**Siguiente:** [hiperelasticidad](../09-nonlinear/index.md)

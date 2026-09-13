@@ -4,7 +4,7 @@ difficulty: inicial
 phenomenon: aproximación de campos
 pde: ninguna; interpolación de sin(pi*x)sin(pi*y)
 concepts: [Function, SpatialCoordinate, TrialFunction, TestFunction, reducción MPI]
-prerequisites: [módulo 0, NumPy]
+prerequisites: [lección 2, NumPy]
 duration_minutes: 35
 cost: menos de 30 segundos en modo quick
 serial: true
@@ -12,11 +12,11 @@ parallel: true
 inputs: [grados P1/P2, refinamientos]
 outputs: [errores L2, tasas, resumen JSON]
 units: adimensional
-command: python examples/01_interpolation.py --quick --output results
+command: python examples/02_interpolation.py --quick --output results
 success: tasas finales P1>1.7 y P2>2.5
 tolerances: {p1_rate_minimum: 1.7, p2_rate_minimum: 2.5}
 sources: [https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_interpolation-io.html]
 seed: null
 minimum_version: 0.11.0
 tested_version: 0.11.0.post0
-script: examples/01_interpolation.py
+script: examples/02_interpolation.py

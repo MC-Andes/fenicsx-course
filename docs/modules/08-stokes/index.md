@@ -1,91 +1,113 @@
-# Módulo 8 · Stokes y Navier–Stokes
+# Lección 10 · Stokes y el primer problema mixto
 
-**Nivel:** intermedio/avanzado · **Tiempo:** 6 h · **Prerrequisitos:** módulos 3–4 y mecánica de fluidos.
+**Nivel:** intermedio · **Tiempo:** 3 h · **Prerrequisitos:** lecciones 2–5 y mecánica de fluidos básica.
+
+## Por qué Stokes va antes de Navier–Stokes
+
+Stokes introduce dos dificultades nuevas —velocidad/presión y restricción de
+incompresibilidad— sin añadir todavía convección no lineal. Cuando el canal
+analítico esté validado, la lección 11 conservará este sistema y añadirá un solo
+concepto: transporte de momento.
 
 ## Objetivos
 
-Construirás Taylor–Hood, controlarás el nullspace de presión, validarás
-Poiseuille y resolverás un Oseen iterativo con arrastre/balance de masa.
+Al terminar podrás:
 
-## Modelos y unidades
+- construir un espacio Taylor–Hood velocidad–presión;
+- explicar por qué la presión puede estar definida hasta una constante;
+- imponer no-slip y un perfil de entrada;
+- medir caudal, divergencia y error global;
+- interpretar un sistema de punto silla.
 
-Stokes manufacturado en canal unidad: (u=(4y(1-y),0)), (p=4-8x), viscosidad
-1. Cilindro: canal 2.2×0.41, radio 0.05, velocidad pico 0.3, (\rho=1),
-(\mu=0.01), (Re=3).
+## Modelo y unidades
 
-## Forma fuerte y condiciones
+En un canal rectangular adimensional se usa
+$u=(4y(1-y),0)$, $p=4-8x$ y viscosidad $\mu=1$. El perfil de Poiseuille y la
+presión lineal ofrecen una referencia analítica.
+
+## Forma fuerte
 
 \[
--\mu\Delta u+\rho(u\cdot\nabla)u+\nabla p=0,\qquad\nabla\cdot u=0.
+-\mu\Delta u+\nabla p=0,
+\qquad \nabla\cdot u=0.
 \]
 
-Poiseuille prescribe velocidad exacta; el cilindro usa entrada parabólica,
-no-slip en paredes/obstáculo y tracción natural en salida.
+La velocidad se prescribe en entrada y paredes. La salida y el tratamiento de
+presión se documentan en el script; no se debe imponer simultáneamente una
+presión puntual y un nullspace sin justificación.
 
 ## Forma débil
 
+Encontrar $(u,p)\in V\times Q$ tal que, para todo $(v,q)$,
+
 \[
-\mu(\nabla u,\nabla v)+\rho((w\cdot\nabla)u,v)
--(p,\nabla\cdot v)+(\nabla\cdot u,q)=0.
+\mu(\nabla u,\nabla v)
+-(p,\nabla\cdot v)
++(\nabla\cdot u,q)=0.
 \]
 
-Para Stokes, (w=0). Para Picard, (w=u^k) y se itera hasta convergencia.
+La elección P2/P1 evita el par igual orden no estabilizado y satisface la
+compatibilidad inf-sup a nivel de este curso.
 
 ## Mapa matemático → software
 
 | Concepto | Objeto |
 | --- | --- |
-| velocidad/presión | P2 vectorial / P1 escalar |
-| saddle point | matriz bloque/nest |
+| velocidad | elemento P2 vectorial |
+| presión | elemento P1 escalar |
+| espacio mixto | `mixed_element([P2, P1])` |
+| sistema de punto silla | matriz y vectores por bloques |
 | presión hasta constante | `PETSc.NullSpace` |
-| Picard | `Function` coeficiente actualizado |
-| caudal/arrastre | integrales `ds` globales |
+| caudal | integral global de $u\cdot n$ |
 
-## Ejemplos e inspección
+## Ejemplo
 
-Ejecuta `python examples/09_stokes_channel.py --quick --output results` y después
-`python examples/10_cylinder_flow.py --quick --output results`. Inspecciona
-fronteras, mapas mixtos, media de presión e iteración relativa.
+```bash
+python examples/10_stokes_channel.py --quick --output results
+```
+
+Antes del solve, comprueba fronteras, grados de libertad restringidos y espacio
+de presión. Después revisa el error de velocidad/presión, la divergencia y el
+caudal; no empieces por la visualización.
 
 ## Solver
 
-Stokes usa MINRES + fieldsplit GAMG/Jacobi y nullspace constante. El cilindro
-usa LU por iteración de Picard para el modo de práctica; una simulación grande debe
-usar precondicionamiento por bloques.
+El ejemplo usa MINRES con `fieldsplit`, GAMG para velocidad, Jacobi para presión
+y nullspace constante. El prefijo PETSc debe ser único y toda razón de
+convergencia menor o igual a cero es un fallo.
 
 ## Verificación cuantitativa
 
-Poiseuille comprueba errores de velocidad/presión, divergencia y caudal 2/3. El
-cilindro exige Picard convergente, arrastre no nulo y desbalance de caudal <4 %
-en modo quick; el estudio completo reduce esa tolerancia y refina el obstáculo.
-
-## Visualización
-
-Exporta velocidad interpolada a P1 y presión por separado. Usa flechas y líneas
-de corriente con escala declarada; reporta arrastre/caída de presión junto a la
-figura.
+- el caudal analítico es $2/3$;
+- los errores de velocidad y presión deben quedar bajo las tolerancias de la
+  metadata;
+- la norma de divergencia debe ser pequeña;
+- las métricas deben coincidir entre uno y dos rangos dentro de tolerancia.
 
 ## Errores frecuentes
 
-- Par P1/P1 no estabilizado.
-- Omitir nullspace con velocidad prescrita en todo el contorno.
-- Comparar presión sin eliminar su constante.
-- Integrar caudal con signo de normal inconsistente.
-- Aceptar una iteración no lineal sin criterio relativo.
+- usar P1/P1 sin estabilización;
+- comparar presión sin eliminar su constante;
+- olvidar la condición de compatibilidad del sistema;
+- integrar caudal con el signo de normal equivocado;
+- usar un valor local como si fuera la integral global.
 
-## Ejercicios graduados
+## Práctica
 
-1. Cambia longitud/altura y deriva caudal analítico.
-2. Impone presión de referencia en vez de nullspace y compara.
-3. Estudia arrastre del cilindro con tres mallas y dos (Re).
+1. Cambia longitud y altura, y deriva el nuevo caudal.
+2. Sustituye el nullspace por una presión de referencia y compara.
+3. Ejecuta con uno y dos procesos y explica las diferencias de redondeo.
+4. Identifica qué término faltaría para obtener Navier–Stokes.
 
-## Solución o guía
+## Fuentes y versión
 
-Una presión puntual y un nullspace son alternativas, no deben aplicarse a la
-vez sin justificar. El balance usa flujo entrante con signo opuesto a la normal.
+- [Demo oficial de Stokes en DOLFINx 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_stokes.html).
+- [Demos oficiales de DOLFINx](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos.html).
 
-## Fuentes, licencia, versión y cambios
+El caso incluye formulación, código y comprobaciones en
+`examples/10_stokes_channel.py`.
 
-[Demo Stokes 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_stokes.html).
-Los casos del canal y el cilindro incluyen aquí su formulación, código y
-comprobaciones de caudal, divergencia, masa y arrastre.
+---
+
+**Anterior:** [ruta de fluidos](../../tracks/fluids.md) ·
+**Siguiente:** [Navier–Stokes y cilindro](../navier-stokes/index.md)

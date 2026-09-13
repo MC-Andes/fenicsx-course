@@ -4,7 +4,7 @@ difficulty: avanzado
 phenomenon: separación de fases
 pde: dc/dt-div(grad(mu))=0; mu-df/dc+lambda*laplacian(c)=0
 concepts: [espacio mixto, SNES, conservación de masa, energía libre]
-prerequisites: [módulo 9, problemas transitorios]
+prerequisites: [lecciones 6 y 9]
 duration_minutes: 150
 cost: menos de 2 minutos en modo quick
 serial: true

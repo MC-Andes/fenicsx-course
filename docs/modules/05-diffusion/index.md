@@ -1,6 +1,12 @@
-# Módulo 5 · Problemas transitorios: difusión
+# Lección 6 · Difusión transitoria
 
-**Nivel:** intermedio · **Tiempo:** 4 h · **Prerrequisitos:** módulo 4, derivadas temporales.
+**Nivel:** intermedio · **Tiempo:** 4 h · **Prerrequisitos:** lecciones 2–5, derivadas temporales.
+
+## Qué cambia frente a Poisson
+
+La rigidez espacial es conocida. La novedad es conservar un estado anterior,
+discretizar $\partial_tu$ y verificar la evolución, no solamente el campo final.
+Este patrón reaparece en Navier–Stokes transitorio y multifísica.
 
 ## Objetivos
 
@@ -82,3 +88,9 @@ suave. Construye tablas separadas de (h) y (\Delta t).
 
 DOLFINx 0.11.0.post0; explicación original con referencia al tutorial FEniCSx
 de Dokken (CC BY 4.0). Código del curso MIT, contenido CC BY 4.0.
+
+---
+
+**Anterior:** [núcleo común](../03-spaces/index.md) ·
+**Siguiente:** [ruta de sólidos](../../tracks/solids.md) o
+[multifísica](../10-multiphysics/index.md)

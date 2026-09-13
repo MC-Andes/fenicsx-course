@@ -5,7 +5,7 @@
 | 0.1.x | 0.11.* | 3.12 | desarrollo público |
 | 1.x | 0.11.* | 3.12 | objetivo estable |
 
-Los arreglos didácticos/técnicos son releases patch; nuevos módulos compatibles,
+Los arreglos didácticos/técnicos son releases patch; nuevas lecciones compatibles,
 minor; una migración general de DOLFINx puede requerir major. Se revisan issues
 y enlaces cada mes, el entorno cada semestre y la siguiente versión estable una
 vez al año.

@@ -1,6 +1,12 @@
-# Módulo 3 · Elementos, espacios y grados de libertad
+# Lección 5 · Elementos, espacios y convergencia
 
-**Nivel:** inicial · **Tiempo:** 3 h · **Prerrequisitos:** módulo 2, álgebra lineal.
+**Nivel:** inicial · **Tiempo:** 3 h · **Prerrequisitos:** lecciones 3–4, álgebra lineal.
+
+## Conexión con las lecciones anteriores
+
+La malla describe la geometría; el elemento decide qué información vive en cada
+celda; el espacio conecta ambos y numera grados de libertad. Esta lección cierra
+el núcleo común explicando por qué refinar o cambiar el grado altera el error.
 
 ## Objetivos
 
@@ -33,13 +39,13 @@ No se prescribe PDE. La elección del espacio anticipa conformidad: Poisson usa
 
 ## Ejemplo e inspección
 
-Ejecuta `python examples/03_function_spaces.py --quick --output results`. El
+Ejecuta `python examples/04_function_spaces.py --quick --output results`. El
 número global de DOF es `size_global*index_map_bs`; el tamaño de `x.array`
 incluye información local/fantasma y no es esa dimensión global.
 
 ## Solver
 
-No hay solver. En módulos posteriores, el orden de bloques y los mapas de
+No hay solver. En lecciones posteriores, el orden de bloques y los mapas de
 subespacio determinarán las condiciones esenciales y el precondicionador.
 
 ## Verificación cuantitativa
@@ -74,3 +80,8 @@ No reconstruyas índices manualmente.
 
 [Basix 0.11](https://docs.fenicsproject.org/basix/v0.11.0/python/) y DOLFINx
 0.11.0.post0. Código MIT, texto CC BY 4.0.
+
+---
+
+**Anterior:** [mallas, etiquetas y fronteras](../02-meshes/index.md) ·
+**Siguiente:** [elige una ruta de especialización](../../learning-path.md#rutas-segun-tu-objetivo)

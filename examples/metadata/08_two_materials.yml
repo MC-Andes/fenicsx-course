@@ -4,7 +4,7 @@ difficulty: intermedio
 phenomenon: elasticidad heterogénea
 pde: -div(sigma_i(u))=0 por subdominio
 concepts: [MeshTags de celda, dx marcado, interfaz, balance]
-prerequisites: [módulo 6]
+prerequisites: [lecciones 4 y 7]
 duration_minutes: 90
 cost: menos de 60 segundos en modo quick
 serial: true

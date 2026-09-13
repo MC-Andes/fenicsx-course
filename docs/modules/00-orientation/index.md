@@ -1,6 +1,12 @@
-# Módulo 0 · Orientación y entorno
+# Lección 0 · Orientación y entorno
 
 **Nivel:** inicial · **Tiempo:** 60 min · **Prerrequisitos:** terminal, Git y Python básico.
+
+## Tu punto de partida
+
+Esta lección comprueba el entorno antes de introducir matemática o APIs. No
+necesitas entender todavía cómo se resuelve una PDE: solo debes demostrar que
+Python, DOLFINx y MPI pertenecen al mismo entorno y producen una medida global.
 
 ## Objetivos
 
@@ -15,7 +21,7 @@ que una partición serial o MPI conserve ocho celdas globales.
 
 ## Forma débil
 
-No aplica todavía. Una forma débil aparecerá en el módulo 4; aquí se comprueba
+No aplica todavía. Una forma débil aparecerá en la lección 1; aquí se comprueba
 que los componentes capaces de compilarla y ensamblarla son compatibles.
 
 ## Mapa concepto → software
@@ -73,3 +79,8 @@ La respuesta 3×2 es 12 triángulos globales. Para la distribución consulta
 
 API DOLFINx 0.11.0.post0. Código MIT, texto CC BY 4.0. Consulta
 [documentación oficial](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/).
+
+---
+
+**Anterior:** [instalación](../../setup.md) ·
+**Siguiente:** [matemática mínima y forma débil](../../foundations/weak-forms.md)
