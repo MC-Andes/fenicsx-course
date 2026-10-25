@@ -19,6 +19,10 @@ No se resuelve una PDE. El “modelo” es una malla triangular del cuadrado uni
 las coordenadas y resultados son adimensionales. La condición comprobable es
 que una partición serial o MPI conserve ocho celdas globales.
 
+![La malla de ocho triángulos conservada al pasar de serial a dos rangos MPI](../../assets/figures/sanity-mpi.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">Cada rango almacena una parte distinta; la reducción global debe recuperar las mismas ocho celdas.</p>
+
 ## Forma débil
 
 No aplica todavía. Una forma débil aparecerá en la lección 1; aquí se comprueba
@@ -74,8 +78,8 @@ La malla 2×2 se divide en dos triángulos por cuadrado: el total global debe se
 
 ## Visualización e interpretación
 
-No se requiere visualización. Aprende desde ahora que una imagen de la malla no
-reemplaza el conteo global.
+La figura permite anticipar la partición, pero no reemplaza el conteo global.
+En MPI, los colores o índices locales pueden cambiar sin alterar la malla física.
 
 ## Errores frecuentes
 

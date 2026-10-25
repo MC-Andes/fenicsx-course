@@ -57,6 +57,10 @@ sea menor que la tolerancia.
 | fuerza sobre el cilindro | integral de tensión sobre `ds(cylinder)` |
 | conservación | caudal global de entrada y salida |
 
+![Líneas de corriente, arrastre y balance de caudal alrededor del cilindro](../../assets/figures/cylinder-flow.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">La geometría ayuda a leer el flujo, pero la aceptación depende de Picard, arrastre finito y balance de masa.</p>
+
 ## Ejemplo
 
 ```bash

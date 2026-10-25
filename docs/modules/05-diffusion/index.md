@@ -44,6 +44,10 @@ Con Euler hacia atrás:
 | matriz masa+rigidez | forma bilineal |
 | actualización | copia de coeficientes + `scatter_forward` |
 
+![Difusión de la temperatura y energía decreciente a lo largo del tiempo](../../assets/figures/heat-diffusion.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">La amplitud térmica disminuye sin crear energía. El campo y la curva deben interpretarse juntos.</p>
+
 ## Ejemplo e inspección
 
 Ejecuta `python examples/05_heat_diffusion.py --quick --output results`.

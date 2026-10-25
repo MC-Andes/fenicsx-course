@@ -37,6 +37,10 @@ resuelve.
 | variación | `ufl.TestFunction(V)` |
 | valores locales + fantasmas | `function.x.array` |
 
+![Comparación entre la interpolación P1 y la tasa más rápida de P2](../../assets/figures/interpolation-convergence.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">P1 y P2 aproximan el mismo campo; la diferencia importante aparece al medir cómo decrece el error al refinar.</p>
+
 ## Ejemplo mínimo e inspección
 
 Ejecuta `python examples/02_interpolation.py --quick --output results`. Inspecciona

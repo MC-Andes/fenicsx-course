@@ -12,8 +12,8 @@ y el proyecto usa [Semantic Versioning](https://semver.org/lang/es/).
 - Página de equipo y créditos con un espacio de perfil para Nicolas Useche.
 - Laboratorio guiado de Poisson con ocho pasos, puntos de control, diagnóstico
   y modificaciones controladas sin depender de cuadernos Jupyter.
-- Ocho diagramas SVG accesibles para explicar la ruta, la pila FEniCSx, forma
-  débil, condiciones de frontera, mallas, espacios, solución y convergencia.
+- Dieciocho diagramas SVG accesibles: fundamentos visuales y una figura
+  específica para cada uno de los trece ejemplos ejecutables.
 
 ### Changed
 
@@ -26,6 +26,8 @@ y el proyecto usa [Semantic Versioning](https://semver.org/lang/es/).
   en el dossier del investigador principal, con tipografía serif/sans.
 - Las lecciones iniciales incluyen transiciones explícitas, preguntas de
   comprobación y expresiones matemáticas corregidas para su renderizado web.
+- El repertorio incorpora una galería navegable que conecta la geometría, el
+  fenómeno esperado, la métrica de aceptación, la lección y el script.
 
 ## [0.1.1] - 2026-08-27
 

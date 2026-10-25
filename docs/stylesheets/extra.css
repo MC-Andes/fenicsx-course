@@ -205,6 +205,21 @@ input {
   text-align: center;
 }
 
+.example-gallery img {
+  aspect-ratio: 16 / 8;
+  background: var(--mc-paper);
+  border: 1px solid var(--mc-rule);
+  display: block;
+  object-fit: contain;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+.example-gallery .md-button {
+  margin-right: 0.25rem;
+  margin-top: 0.35rem;
+}
+
 .course-kicker,
 .team-kicker {
   color: var(--mc-green);
