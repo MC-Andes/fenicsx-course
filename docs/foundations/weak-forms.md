@@ -95,6 +95,32 @@ a(u,v)=\int_\Omega\nabla u\cdot\nabla v\,dx,
 Al restringir $V$ a un espacio finito $V_h$, la igualdad se convierte en el
 sistema algebraico $A\mathbf{u}=\mathbf{b}$.
 
+![Paso de la forma fuerte a la formulación variacional de Poisson](../assets/figures/weak-form.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">Cada flecha representa una operación matemática justificable; el código UFL comienza en la última caja.</p>
+
+### Qué cambia si la frontera no es toda Dirichlet
+
+Divide $\partial\Omega=\Gamma_D\cup\Gamma_N$. La función de prueba se anula
+solo en $\Gamma_D$. Si se prescribe $\nabla u\cdot n=g$ en $\Gamma_N$, queda
+
+\[
+\int_\Omega \nabla u\cdot\nabla v\,dx
+=\int_\Omega fv\,dx+\int_{\Gamma_N}gv\,ds.
+\]
+
+Esta comparación ayuda a recordar la diferencia:
+
+| Condición | Dónde aparece | Acción en el programa |
+| --- | --- | --- |
+| $u=g$ en $\Gamma_D$ | restricción del espacio | localizar DOF y usar `dirichletbc` |
+| $\nabla u\cdot n=g$ en $\Gamma_N$ | lado derecho de la forma | añadir integral con `ds(tag)` |
+| $\partial_n u+\alpha u=r$ | ambos lados | añadir integral a `a` y a `L` |
+
+![Comparación visual de condiciones Dirichlet, Neumann y Robin](../assets/figures/boundary-conditions.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">Primero identifica la porción de frontera; después decide si restringe valores, aporta un flujo o modifica ambos lados de la forma.</p>
+
 ## Ensayo, prueba y solución
 
 | Papel | Símbolo | Objeto |
@@ -136,7 +162,8 @@ L = f * v * ufl.dx
 
 Lee cada línea de derecha a izquierda: región de integración, operación sobre
 campos y papel de cada función. Todavía faltan malla, espacio, frontera, solve y
-verificación; la siguiente página conecta las ocho piezas.
+verificación. El [laboratorio guiado](../guides/first-simulation.md) conecta las
+ocho piezas con pausas explícitas antes de que leas el resumen de Poisson.
 
 ## Comprobación antes de avanzar
 
@@ -151,7 +178,7 @@ medir el error y su tasa al refinar.
 
 ## Fuentes y versión
 
-- [Manual UFL](https://docs.fenicsproject.org/ufl/2026.1.0/manual.html).
+- [Manual del lenguaje de formas UFL 2026.1](https://docs.fenicsproject.org/ufl/2026.1.0/manual/form_language.html).
 - [Demo oficial de Poisson en DOLFINx 0.11](https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/demos/demo_poisson.html).
 - [Tutorial de FEniCSx de Dokken](https://jsdokken.com/dolfinx-tutorial/chapter1/fundamentals.html), CC BY 4.0.
 
@@ -160,4 +187,4 @@ El texto y los ejemplos conceptuales de esta página son originales de MC-Andes.
 ---
 
 **Anterior:** [orientación](../modules/00-orientation/index.md) ·
-**Siguiente:** [primer problema completo — Poisson](../modules/04-poisson/index.md)
+**Siguiente:** [laboratorio guiado — primera simulación](../guides/first-simulation.md)

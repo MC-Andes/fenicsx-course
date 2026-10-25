@@ -23,8 +23,8 @@ unidades físicas.
 ## Forma fuerte y débil
 
 No se prescribe PDE. La elección del espacio anticipa conformidad: Poisson usa
-(H^1), elasticidad un espacio vectorial (H^1\)^2 y Stokes el producto
-(V\times Q) compatible con inf-sup.
+$H^1$, elasticidad un espacio vectorial $(H^1)^2$ y Stokes el producto
+$V\times Q$ compatible con inf-sup.
 
 ## Mapa concepto → software
 
@@ -37,11 +37,28 @@ No se prescribe PDE. La elección del espacio anticipa conformidad: Poisson usa
 | vista de componente | `W.sub(i)` |
 | espacio independiente + mapa | `W.sub(i).collapse()` |
 
+![Ubicación de grados de libertad P1, P2 y DG0 sobre la misma celda](../../assets/figures/function-spaces.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">La geometría no cambia: lo que cambia es la información que cada elemento representa y cómo se comparte entre celdas.</p>
+
 ## Ejemplo e inspección
 
 Ejecuta `python examples/04_function_spaces.py --quick --output results`. El
 número global de DOF es `size_global*index_map_bs`; el tamaño de `x.array`
 incluye información local/fantasma y no es esa dimensión global.
+
+### Decide el espacio con tres preguntas
+
+1. **¿Qué tipo de valor tiene la incógnita?** Escalar, vector o tensor.
+2. **¿Debe ser continua entre celdas?** Poisson P1 sí; un material DG0 no.
+3. **¿Qué grado necesitas?** Relaciónalo con regularidad, costo y tasa esperada.
+
+Después construye el espacio y comprueba su dimensión global. En un problema
+mixto añade una cuarta pregunta: ¿qué subespacio recibe cada condición?
+
+!!! question "Punto de control"
+    `W.sub(i)` es una vista dentro del espacio mixto. `collapse()` crea un
+    espacio independiente y un mapa; no son intercambiables al localizar DOF.
 
 ## Solver
 

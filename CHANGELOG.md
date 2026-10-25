@@ -10,6 +10,10 @@ y el proyecto usa [Semantic Versioning](https://semver.org/lang/es/).
 - Mapa del curso, fundamentos matemáticos, rutas de sólidos/fluidos y una
   página independiente para Navier–Stokes.
 - Página de equipo y créditos con un espacio de perfil para Nicolas Useche.
+- Laboratorio guiado de Poisson con ocho pasos, puntos de control, diagnóstico
+  y modificaciones controladas sin depender de cuadernos Jupyter.
+- Ocho diagramas SVG accesibles para explicar la ruta, la pila FEniCSx, forma
+  débil, condiciones de frontera, mallas, espacios, solución y convergencia.
 
 ### Changed
 
@@ -20,6 +24,8 @@ y el proyecto usa [Semantic Versioning](https://semver.org/lang/es/).
 - Los ejemplos se renumeran para coincidir con la progresión pedagógica.
 - La interfaz adopta una identidad editorial marfil, verde y terracota inspirada
   en el dossier del investigador principal, con tipografía serif/sans.
+- Las lecciones iniciales incluyen transiciones explícitas, preguntas de
+  comprobación y expresiones matemáticas corregidas para su renderizado web.
 
 ## [0.1.1] - 2026-08-27
 

@@ -16,13 +16,13 @@ un campo sin tratar su vector local como arreglo global.
 
 ## Modelo y unidades
 
-Se interpola (g(x,y)=\sin(\pi x)\sin(\pi y)) en el cuadrado unidad. Todo es
+Se interpola $g(x,y)=\sin(\pi x)\sin(\pi y)$ en el cuadrado unidad. Todo es
 adimensional; no hay ecuación gobernante ni condiciones de frontera.
 
 ## Forma fuerte y débil
 
-No hay PDE. La operación discreta es encontrar (g_h\in V_h) cuyos grados de
-libertad reproduzcan los funcionales de interpolación de (g). La forma de
+No hay PDE. La operación discreta es encontrar $g_h\in V_h$ cuyos grados de
+libertad reproduzcan los funcionales de interpolación de $g$. La forma de
 masa `inner(trial, test)*dx` se construye solo para mostrar simbolismo; no se
 resuelve.
 
@@ -44,6 +44,18 @@ el tamaño propio con `V.dofmap.index_map.size_local`, el bloque con
 `index_map_bs` y los fantasmas con `num_ghosts`. Tras asignar, llama
 `field.x.scatter_forward()`.
 
+### Inspección en cuatro pausas
+
+1. Antes de interpolar, clasifica cada objeto como Python, UFL o DOLFINx.
+2. Después de interpolar, identifica dónde viven los coeficientes locales.
+3. Después de `scatter_forward`, distingue valores propios y fantasma.
+4. En el JSON, compara tasas P1/P2 antes de abrir cualquier figura.
+
+!!! question "Punto de control"
+    `SpatialCoordinate(domain)` y `field.x.array` se relacionan con posiciones
+    y números, pero no son equivalentes: el primero es simbólico; el segundo es
+    almacenamiento local de una función discreta.
+
 ## Solver
 
 La interpolación no usa KSP. Cambiar una `Constant` evita recompilar una forma;
@@ -52,13 +64,13 @@ cambiar una expresión Python interpolada modifica los coeficientes de una
 
 ## Verificación cuantitativa
 
-El error L2 de interpolación debe decrecer aproximadamente como (h^2) para P1
-y (h^3) para P2. El ejemplo exige tasas >1.7 y >2.5 en la última pareja.
+El error L2 de interpolación debe decrecer aproximadamente como $h^2$ para P1
+y $h^3$ para P2. El ejemplo exige tasas >1.7 y >2.5 en la última pareja.
 
 ## Visualización
 
 Una superficie suave puede ocultar un orden incorrecto. Grafica solo después
-de conservar la tabla de (h), error y tasa.
+de conservar la tabla de $h$, error y tasa.
 
 ## Errores frecuentes
 
@@ -70,7 +82,7 @@ de conservar la tabla de (h), error y tasa.
 ## Ejercicios graduados
 
 1. Clasifica diez objetos en Python, NumPy, DOLFINx discreto o UFL simbólico.
-2. Sustituye (g) por un polinomio cuadrático y predice qué espacio lo reproduce.
+2. Sustituye $g$ por un polinomio cuadrático y predice qué espacio lo reproduce.
 3. Añade P3 y verifica su tasa sin copiar el vector a rango 0.
 
 ## Solución o guía

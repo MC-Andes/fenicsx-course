@@ -185,6 +185,26 @@ input {
   padding: 0.7rem 0.9rem;
 }
 
+.lesson-figure {
+  background: var(--mc-card);
+  border: 1px solid var(--mc-rule);
+  border-radius: 4px;
+  display: block;
+  height: auto;
+  margin: 1.4rem auto 0.45rem;
+  max-width: 100%;
+  padding: 0.4rem;
+  width: 100%;
+}
+
+.figure-caption {
+  color: var(--mc-ink-light);
+  font-size: 0.82rem;
+  margin: 0 auto 1.6rem;
+  max-width: 56rem;
+  text-align: center;
+}
+
 .course-kicker,
 .team-kicker {
   color: var(--mc-green);

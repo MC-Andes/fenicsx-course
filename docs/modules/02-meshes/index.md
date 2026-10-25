@@ -23,7 +23,7 @@ de longitud; la integral de 1 sobre cada frontera debe devolver 1, 1, 2 y 2.
 ## Forma fuerte y débil
 
 No hay PDE. La identidad geométrica verificable es
-(\int_{\Gamma_i}1\,ds=|\Gamma_i|). Las normales exteriores se obtienen con
+$\int_{\Gamma_i}1\,ds=|\Gamma_i|$. Las normales exteriores se obtienen con
 `FacetNormal`; `dS` quedará reservado para facetas interiores.
 
 ## Mapa concepto → software
@@ -37,11 +37,28 @@ No hay PDE. La identidad geométrica verificable es
 | marcador | `mesh.meshtags` |
 | integral marcada | `ufl.Measure("ds", subdomain_data=tags)` |
 
+![Malla triangular con celdas, facetas, vértices y cuatro etiquetas de frontera](../../assets/figures/mesh-boundaries.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">La malla describe conectividad; las etiquetas asignan significado a grupos de entidades, pero todavía no imponen una condición.</p>
+
 ## Ejemplo e inspección
 
 Ejecuta `python examples/03_tagged_boundaries.py --quick --output results`.
 Examina `tags.indices`, `tags.values` y `tags.find(marker)`. La utilidad común
 ordena índices y rechaza una faceta asignada dos veces.
+
+### Secuencia segura para trabajar con fronteras
+
+1. Define cada región geométrica con una función localizadora.
+2. Localiza facetas usando `tdim - 1`, no la dimensión geométrica a ciegas.
+3. Ordena índices y comprueba que una faceta no tenga dos etiquetas.
+4. Construye `MeshTags` y examina sus valores únicos.
+5. Integra 1 sobre cada `ds(tag)` y compara con la medida esperada.
+6. Solo entonces usa la etiqueta en una carga, flujo o condición.
+
+!!! question "Punto de control"
+    Una esquina pertenece visualmente a dos lados, pero la entidad etiquetada
+    aquí es la faceta completa. No dupliques facetas por clasificar vértices.
 
 ## Solver
 

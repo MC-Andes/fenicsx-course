@@ -15,6 +15,38 @@ está en los scripts, JSON, pistas y soluciones del repositorio.
    con la página.
 7. Repite sin `--quick` o con una variación propia cuando el costo lo permita.
 
+## La regla de una sola incógnita
+
+Cuando te bloquees, no releas toda la página. Escribe una sola pregunta concreta:
+“¿qué objeto no entiendo?”, “¿qué región se integra?” o “¿qué métrica falló?”.
+Luego vuelve al punto de control relacionado. En la primera simulación, usa el
+[laboratorio de Poisson paso a paso](guides/first-simulation.md), que separa:
+
+1. dominio;
+2. espacio;
+3. objetos simbólicos;
+4. forma débil;
+5. frontera;
+6. solver;
+7. verificación;
+8. salida y visualización.
+
+No cambies dos componentes a la vez mientras aprendes. Si modificas la malla,
+conserva elemento, PDE y solver; si modificas el grado, vuelve primero al caso
+base. Así puedes atribuir el cambio observado a una sola decisión.
+
+## Tres niveles de evidencia
+
+| Nivel | Pregunta | Ejemplo |
+| --- | --- | --- |
+| ejecución | ¿el programa terminó? | no hubo excepción |
+| álgebra | ¿el solver convergió? | razón PETSc positiva |
+| modelo | ¿la solución es correcta? | tasa, balance o invariante aprobado |
+
+Una figura complementa estos niveles, pero no sustituye ninguno. Úsala para
+detectar simetrías rotas, fronteras equivocadas u oscilaciones; confirma después
+con una cantidad numérica independiente.
+
 ## No estudies el catálogo en orden
 
 El [repertorio](examples/index.md) es un índice para encontrar implementaciones,

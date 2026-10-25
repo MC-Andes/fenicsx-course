@@ -8,7 +8,7 @@ la forma débil y un problema de Poisson completo, y después abre rutas de calo
 sólidos, fluidos y multifísica.
 
 [Ver el mapa del curso](learning-path.md){ .md-button .md-button--primary }
-[Instalar el entorno](setup.md){ .md-button }
+[Comenzar el laboratorio guiado](guides/first-simulation.md){ .md-button }
 
 <div class="grid cards" markdown>
 
@@ -42,7 +42,7 @@ sólidos, fluidos y multifísica.
 
 </div>
 
-## Tus primeros 90 minutos
+## Tu primer recorrido
 
 | Paso | Acción | Resultado |
 | --- | --- | --- |
@@ -50,11 +50,16 @@ sólidos, fluidos y multifísica.
 | 2 | instala el [entorno reproducible](setup.md) | DOLFINx y MPI disponibles |
 | 3 | ejecuta la [orientación](modules/00-orientation/index.md) | sanity check válido |
 | 4 | estudia la [forma débil](foundations/weak-forms.md) | reconoces ensayo, prueba y BC |
-| 5 | resuelve [Poisson](modules/04-poisson/index.md) | primer solve con error medido |
+| 5 | sigue el [laboratorio guiado](guides/first-simulation.md) | conectas ocho decisiones con el código |
+| 6 | consolida [Poisson](modules/04-poisson/index.md) | primer solve con error medido |
 
 Después de Poisson, las lecciones de objetos, mallas y espacios explican con
 detalle las piezas que ya viste en funcionamiento. Así no necesitas memorizar
 una API descontextualizada antes de resolver algo.
+
+Cada paso inicial incluye una figura, una predicción y un punto de control. Si
+una respuesta no es clara, la página enlaza exactamente al concepto que debes
+repasar antes de continuar.
 
 ## Elige una ruta
 
