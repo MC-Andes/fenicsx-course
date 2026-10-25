@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">Ruta de aprendizaje del curso FEniCSx</title>
+  <desc id="desc">Una ruta común desde el entorno hasta los espacios de funciones y cuatro ramas hacia calor, sólidos, fluidos y multifísica.</desc>
+  <defs>
+    <style>
+      .box{fill:#fff;stroke:#2d5a4e;stroke-width:3}.branch{fill:#f0ede8;stroke:#8b3a2f;stroke-width:3}
+      .line{fill:none;stroke:#77736e;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .n{fill:#2d5a4e}.t{font:600 23px 'DM Sans',Arial,sans-serif;fill:#1a1a1a;text-anchor:middle}
+      .s{font:400 18px 'DM Sans',Arial,sans-serif;fill:#5a5a5a;text-anchor:middle}.nt{font:700 20px Arial,sans-serif;fill:#fff;text-anchor:middle}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#77736e"/></marker>
+  </defs>
+  <rect width="1200" height="480" rx="18" fill="#faf9f7"/>
+  <path class="line" marker-end="url(#arrow)" d="M215 122H355"/><path class="line" marker-end="url(#arrow)" d="M535 122H675"/><path class="line" marker-end="url(#arrow)" d="M855 122H995"/>
+  <path class="line" d="M1085 182V238M1085 238H170M1085 238H1030M170 238V288M460 238V288M750 238V288M1030 238V288"/>
+  <g><rect class="box" x="35" y="62" width="180" height="120" rx="12"/><circle class="n" cx="65" cy="88" r="20"/><text class="nt" x="65" y="95">0</text><text class="t" x="125" y="112">Entorno</text><text class="s" x="125" y="144">Python · MPI</text></g>
+  <g><rect class="box" x="355" y="62" width="180" height="120" rx="12"/><circle class="n" cx="385" cy="88" r="20"/><text class="nt" x="385" y="95">1</text><text class="t" x="445" y="112">Forma débil</text><text class="s" x="445" y="144">PDE → integral</text></g>
+  <g><rect class="box" x="675" y="62" width="180" height="120" rx="12"/><circle class="n" cx="705" cy="88" r="20"/><text class="nt" x="705" y="95">2</text><text class="t" x="765" y="112">Poisson</text><text class="s" x="765" y="144">primer solve</text></g>
+  <g><rect class="box" x="995" y="62" width="180" height="120" rx="12"/><circle class="n" cx="1025" cy="88" r="20"/><text class="nt" x="1025" y="95">3–5</text><text class="t" x="1085" y="112">Herramientas</text><text class="s" x="1085" y="144">objetos · mallas · DOF</text></g>
+  <g><rect class="branch" x="50" y="288" width="240" height="130" rx="12"/><text class="t" x="170" y="335">Calor</text><text class="s" x="170" y="370">difusión transitoria</text><text class="s" x="170" y="396">energía</text></g>
+  <g><rect class="branch" x="340" y="288" width="240" height="130" rx="12"/><text class="t" x="460" y="335">Sólidos</text><text class="s" x="460" y="370">elasticidad · Gmsh</text><text class="s" x="460" y="396">no linealidad</text></g>
+  <g><rect class="branch" x="630" y="288" width="240" height="130" rx="12"/><text class="t" x="750" y="335">Fluidos</text><text class="s" x="750" y="370">Stokes</text><text class="s" x="750" y="396">Navier–Stokes</text></g>
+  <g><rect class="branch" x="920" y="288" width="240" height="130" rx="12"/><text class="t" x="1040" y="335">Multifísica</text><text class="s" x="1040" y="370">espacios mixtos</text><text class="s" x="1040" y="396">Cahn–Hilliard</text></g>
+</svg>

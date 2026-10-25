@@ -49,6 +49,10 @@ constante de Lamé efectiva, no la de deformación plana.
 | tracción | `Constant` + `ds(marker)` |
 | reacción | integral global de `dot(stress(u), n)` |
 
+![Placa empotrada, tracción aplicada, deformada y reacción de soporte](../../assets/figures/linear-elasticity.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">La deformada aclara la dirección de la respuesta; el balance reacción–tracción y la energía verifican la solución.</p>
+
 ## Ejemplo e inspección
 
 Ejecuta `python examples/06_linear_elasticity.py --quick --output results`. Revisa

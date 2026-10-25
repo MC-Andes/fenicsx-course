@@ -49,6 +49,10 @@ Se resuelve monolíticamente en P1×P1.
 | sistema acoplado | `NonlinearProblem` |
 | masa/energía | integrales globales por paso |
 
+![Separación de fases con masa constante y energía libre decreciente](../../assets/figures/cahn-hilliard.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">El patrón evoluciona y engrosa; la masa debe permanecer constante y la energía libre no debe aumentar.</p>
+
 ## Ejemplo e inspección
 
 Ejecuta `python examples/12_cahn_hilliard.py --quick --output results`. Inspecciona

@@ -42,6 +42,10 @@ El Jacobiano tangente es (D_uR(u;\delta u,v)) y UFL lo deriva.
 | Newton | `fem.petsc.NonlinearProblem` / SNES |
 | carga incremental | `Constant.value` |
 
+![Estados convergidos durante la carga incremental de un bloque neo-Hookeano](../../assets/figures/hyperelasticity.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">Cada incremento parte del estado convergido anterior; orientación positiva y razón SNES válida son condiciones de aceptación.</p>
+
 ## Ejemplo e inspección
 
 Ejecuta `python examples/09_hyperelasticity.py --quick --output results`. Revisa

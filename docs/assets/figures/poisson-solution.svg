@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Lectura cualitativa de la solución exacta de Poisson</title>
+  <desc id="desc">Mapa de contornos del cuadrado unidad, con valor cero en la frontera, simetría respecto a los ejes centrales y máximo uno en el centro.</desc>
+  <defs>
+    <radialGradient id="heat" cx="50%" cy="50%" r="70%"><stop offset="0" stop-color="#8b3a2f"/><stop offset="0.35" stop-color="#c98a66"/><stop offset="0.68" stop-color="#e7d7bd"/><stop offset="1" stop-color="#2d5a4e"/></radialGradient>
+    <style>.frame{fill:url(#heat);stroke:#1a1a1a;stroke-width:4}.cont{fill:none;stroke:#fff;stroke-width:2;opacity:.8}.axis{stroke:#fff;stroke-width:2;stroke-dasharray:8 8;opacity:.85}.h{font:600 24px 'DM Sans',Arial,sans-serif;fill:#1a1a1a;text-anchor:middle}.p{font:400 18px 'DM Sans',Arial,sans-serif;fill:#5a5a5a}.inside{font:600 18px 'DM Sans',Arial,sans-serif;fill:#fff;text-anchor:middle}.zero{font:600 18px 'DM Sans',Arial,sans-serif;fill:#2d5a4e}</style>
+  </defs>
+  <rect width="1000" height="600" rx="18" fill="#faf9f7"/>
+  <text class="h" x="390" y="48">u(x,y) = sin(πx) sin(πy)</text>
+  <g transform="translate(120 80)"><rect class="frame" width="540" height="420"/><path class="cont" d="M45 210C45 105 145 40 270 40S495 105 495 210S395 380 270 380S45 315 45 210Z"/><path class="cont" d="M110 210C110 130 180 85 270 85S430 130 430 210S360 335 270 335S110 290 110 210Z"/><path class="cont" d="M175 210C175 160 215 125 270 125S365 160 365 210S325 295 270 295S175 260 175 210Z"/><line class="axis" x1="270" y1="0" x2="270" y2="420"/><line class="axis" x1="0" y1="210" x2="540" y2="210"/><circle cx="270" cy="210" r="8" fill="#fff"/><text class="inside" x="270" y="192">máximo = 1</text><text class="inside" x="270" y="238">(0.5, 0.5)</text></g>
+  <g transform="translate(720 120)"><text class="p" x="0" y="0">Lectura esperada</text><text class="zero" x="0" y="60">u = 0 en ∂Ω</text><text class="p" x="0" y="105">• máximo central</text><text class="p" x="0" y="145">• dos ejes de simetría</text><text class="p" x="0" y="185">• sin oscilaciones</text><text class="p" x="0" y="255">La forma orienta.</text><text class="p" x="0" y="295">El error y su tasa</text><text class="p" x="0" y="335">son la verificación.</text></g>
+  <text class="p" x="120" y="545">Vista superior cualitativa; los contornos representan niveles crecientes hacia el centro.</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Grados de libertad en espacios P1, P2 y DG0</title>
+  <desc id="desc">La misma malla triangular muestra grados de libertad en vértices para P1, en vértices y aristas para P2, y uno por celda para DG0.</desc>
+  <defs><style>.cell{fill:#fff;stroke:#77736e;stroke-width:3}.v{fill:#2d5a4e}.e{fill:#8b3a2f}.c{fill:#4e6f91}.h{font:600 25px 'DM Sans',Arial,sans-serif;fill:#1a1a1a;text-anchor:middle}.p{font:400 18px 'DM Sans',Arial,sans-serif;fill:#5a5a5a;text-anchor:middle}.lab{font:600 17px 'DM Sans',Arial,sans-serif;fill:#1a1a1a}</style></defs>
+  <rect width="1200" height="500" rx="18" fill="#faf9f7"/>
+  <g transform="translate(85 95)"><text class="h" x="135" y="0">P1 continuo</text><path class="cell" d="M20 265L135 45L250 265Z"/><circle class="v" cx="20" cy="265" r="11"/><circle class="v" cx="135" cy="45" r="11"/><circle class="v" cx="250" cy="265" r="11"/><text class="p" x="135" y="320">DOF en vértices</text></g>
+  <g transform="translate(465 95)"><text class="h" x="135" y="0">P2 continuo</text><path class="cell" d="M20 265L135 45L250 265Z"/><circle class="v" cx="20" cy="265" r="11"/><circle class="v" cx="135" cy="45" r="11"/><circle class="v" cx="250" cy="265" r="11"/><circle class="e" cx="77.5" cy="155" r="10"/><circle class="e" cx="192.5" cy="155" r="10"/><circle class="e" cx="135" cy="265" r="10"/><text class="p" x="135" y="320">vértices + aristas</text></g>
+  <g transform="translate(845 95)"><text class="h" x="135" y="0">DG0 discontinuo</text><path class="cell" d="M20 265L135 45L250 265Z"/><circle class="c" cx="135" cy="192" r="12"/><text class="p" x="135" y="320">un DOF por celda</text></g>
+  <g transform="translate(330 445)"><circle class="v" cx="0" cy="0" r="8"/><text class="lab" x="18" y="6">vértice</text><circle class="e" cx="180" cy="0" r="8"/><text class="lab" x="198" y="6">arista</text><circle class="c" cx="345" cy="0" r="8"/><text class="lab" x="363" y="6">interior de celda</text></g>
+</svg>

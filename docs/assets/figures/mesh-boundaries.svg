@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 560" role="img" aria-labelledby="title desc">
+  <title id="title">Anatomía de una malla y sus fronteras</title>
+  <desc id="desc">Rectángulo triangularizado con celdas, aristas, vértices y cuatro etiquetas de frontera diferenciadas por color y nombre.</desc>
+  <defs><style>.grid{fill:#fff;stroke:#9b968f;stroke-width:2}.diag{stroke:#c9c4bc;stroke-width:1.5}.left{stroke:#8b3a2f;stroke-width:9}.right{stroke:#2d5a4e;stroke-width:9}.top{stroke:#4e6f91;stroke-width:9}.bottom{stroke:#b47a36;stroke-width:9}.h{font:600 24px 'DM Sans',Arial,sans-serif;fill:#1a1a1a}.p{font:400 18px 'DM Sans',Arial,sans-serif;fill:#5a5a5a}.lab{font:600 18px 'DM Sans',Arial,sans-serif;fill:#1a1a1a}</style></defs>
+  <rect width="1050" height="560" rx="18" fill="#faf9f7"/>
+  <g transform="translate(80 90)"><rect class="grid" width="620" height="360"/>
+    <g class="diag"><path d="M0 0L155 120M155 0L310 120M310 0L465 120M465 0L620 120M0 120L155 240M155 120L310 240M310 120L465 240M465 120L620 240M0 240L155 360M155 240L310 360M310 240L465 360M465 240L620 360"/><path d="M155 0V360M310 0V360M465 0V360M0 120H620M0 240H620"/></g>
+    <line class="left" x1="0" y1="0" x2="0" y2="360"/><line class="right" x1="620" y1="0" x2="620" y2="360"/><line class="top" x1="0" y1="0" x2="620" y2="0"/><line class="bottom" x1="0" y1="360" x2="620" y2="360"/>
+    <circle cx="310" cy="240" r="7" fill="#1a1a1a"/><text class="lab" x="326" y="235">vértice</text><text class="lab" x="170" y="175">celda</text><text class="lab" x="485" y="265">arista / faceta</text>
+  </g>
+  <g transform="translate(755 100)"><text class="h" x="0" y="0">Etiquetas de frontera</text><line class="left" x1="0" y1="55" x2="54" y2="55"/><text class="p" x="75" y="61">1 · izquierda</text><line class="right" x1="0" y1="110" x2="54" y2="110"/><text class="p" x="75" y="116">2 · derecha</text><line class="top" x1="0" y1="165" x2="54" y2="165"/><text class="p" x="75" y="171">3 · superior</text><line class="bottom" x1="0" y1="220" x2="54" y2="220"/><text class="p" x="75" y="226">4 · inferior</text><text class="p" x="0" y="300">La etiqueta identifica.</text><text class="p" x="0" y="330">La condición de frontera</text><text class="p" x="0" y="360">se impone después.</text></g>
+  <text class="p" x="80" y="510">La dimensión topológica de una faceta es una menos que la de la celda.</text>
+</svg>

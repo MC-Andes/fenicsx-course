@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 520" role="img" aria-labelledby="title desc">
+  <title id="title">Flujo de Poiseuille en un canal de Stokes</title>
+  <desc id="desc">Un canal muestra perfil parabólico, velocidad cero en las paredes, caída lineal de presión y el caudal analítico dos tercios.</desc>
+  <defs><style>.chan{fill:#fff;stroke:#1a1a1a;stroke-width:4}.wall{stroke:#8b3a2f;stroke-width:7}.vel{stroke:#2d5a4e;stroke-width:4}.press{stroke:#4e6f91;stroke-width:5;fill:none}.h{font:600 23px 'DM Sans',Arial,sans-serif;fill:#1a1a1a;text-anchor:middle}.p{font:400 18px 'DM Sans',Arial,sans-serif;fill:#5a5a5a;text-anchor:middle}.eq{font:600 20px Georgia,serif;fill:#1a1a1a;text-anchor:middle}.axis{stroke:#1a1a1a;stroke-width:2}</style><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#2d5a4e"/></marker></defs>
+  <rect width="1150" height="520" rx="18" fill="#faf9f7"/>
+  <text class="h" x="430" y="48">Canal de Stokes · solución de Poiseuille</text>
+  <g transform="translate(80 115)"><rect class="chan" width="700" height="230"/><line class="wall" x1="0" y1="0" x2="700" y2="0"/><line class="wall" x1="0" y1="230" x2="700" y2="230"/><g class="vel" marker-end="url(#m)"><line x1="30" y1="25" x2="95" y2="25"/><line x1="30" y1="65" x2="170" y2="65"/><line x1="30" y1="115" x2="220" y2="115"/><line x1="30" y1="165" x2="170" y2="165"/><line x1="30" y1="205" x2="95" y2="205"/></g><path class="vel" fill="none" d="M30 10Q260 115 30 220"/><text class="p" x="350" y="275">uₓ = 4y(1−y) · u = 0 en paredes</text></g>
+  <g transform="translate(850 105)"><text class="h" x="115" y="0">Presión</text><line class="axis" x1="20" y1="215" x2="220" y2="215"/><line class="axis" x1="20" y1="215" x2="20" y2="35"/><path class="press" d="M40 55L205 195"/><text class="p" x="120" y="250">p = 4 − 8x</text><text class="eq" x="120" y="305">Q = 2/3</text><text class="p" x="120" y="345">∥div u∥ ≈ 0</text></g>
+  <text class="p" x="450" y="470">Perfil, presión, caudal y divergencia deben contar la misma historia.</text>
+</svg>

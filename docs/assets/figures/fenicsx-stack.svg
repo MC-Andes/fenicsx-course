@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">Recorrido de una formulación en FEniCSx</title>
+  <desc id="desc">La ecuación y la forma débil se expresan en UFL, se compilan con FFCx y Basix, se ensamblan con DOLFINx y se resuelven con PETSc y MPI.</desc>
+  <defs>
+    <style>.b{fill:#fff;stroke:#d8d3cc;stroke-width:3}.hi{fill:#e7f0ed;stroke:#2d5a4e;stroke-width:3}.alg{fill:#f4e8e5;stroke:#8b3a2f;stroke-width:3}.a{fill:none;stroke:#77736e;stroke-width:4}.h{font:600 26px 'DM Sans',Arial,sans-serif;fill:#1a1a1a;text-anchor:middle}.p{font:400 19px 'DM Sans',Arial,sans-serif;fill:#5a5a5a;text-anchor:middle}.tag{font:700 17px 'DM Sans',Arial,sans-serif;fill:#2d5a4e;text-anchor:middle}</style>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#77736e"/></marker>
+  </defs>
+  <rect width="1100" height="560" rx="18" fill="#faf9f7"/>
+  <path class="a" marker-end="url(#m)" d="M230 280H335"/><path class="a" marker-end="url(#m)" d="M535 280H640"/><path class="a" marker-end="url(#m)" d="M840 280H945"/>
+  <g><rect class="b" x="30" y="185" width="200" height="190" rx="14"/><text class="tag" x="130" y="220">MODELO</text><text class="h" x="130" y="270">PDE</text><text class="p" x="130" y="310">dominio</text><text class="p" x="130" y="340">datos y fronteras</text></g>
+  <g><rect class="hi" x="335" y="145" width="200" height="270" rx="14"/><text class="tag" x="435" y="182">LENGUAJE</text><text class="h" x="435" y="232">UFL</text><text class="p" x="435" y="274">Trial · Test</text><text class="p" x="435" y="306">grad · inner</text><text class="p" x="435" y="338">dx · ds</text><text class="p" x="435" y="380">forma variacional</text></g>
+  <g><rect class="b" x="640" y="120" width="200" height="320" rx="14"/><text class="tag" x="740" y="158">TRADUCCIÓN</text><text class="h" x="740" y="208">FFCx</text><text class="p" x="740" y="246">compila formas</text><line x1="680" y1="276" x2="800" y2="276" stroke="#d8d3cc" stroke-width="2"/><text class="h" x="740" y="322">Basix</text><text class="p" x="740" y="360">elementos</text><text class="p" x="740" y="390">y tabulación</text></g>
+  <g><rect class="alg" x="945" y="85" width="125" height="390" rx="14"/><text class="tag" x="1007" y="124">CÁLCULO</text><text class="h" x="1007" y="182">DOLFINx</text><text class="p" x="1007" y="218">malla</text><text class="p" x="1007" y="246">ensamble</text><line x1="968" y1="278" x2="1046" y2="278" stroke="#cdaea7" stroke-width="2"/><text class="h" x="1007" y="326">PETSc</text><text class="p" x="1007" y="360">Ax = b</text><text class="p" x="1007" y="390">KSP</text><text class="p" x="1007" y="430">MPI</text></g>
+  <text class="p" x="550" y="520">Tú describes la matemática; la pila produce y resuelve el sistema algebraico.</text>
+</svg>

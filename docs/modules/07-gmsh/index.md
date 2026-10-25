@@ -44,6 +44,18 @@ surge del equilibrio débil.
 | materiales | `dx(marker)` con `cell_tags` |
 | agujero libre | ausencia de término en `ds(hole)` |
 
+### Caso 07 · Placa con agujero
+
+![Placa perforada con tracción y concentración de tensiones alrededor del agujero](../../assets/figures/plate-with-hole.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">Las bandas señalan dónde buscar la concentración; $K_t$ solo es defendible cuando se estabiliza con refinamiento.</p>
+
+### Caso 08 · Placa de dos materiales
+
+![Placa con dos materiales, interfaz adherida y continuidad de desplazamiento](../../assets/figures/two-materials.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">El desplazamiento y la tracción son continuos en la interfaz, aunque la deformación cambie por el contraste de rigidez.</p>
+
 ## Ejemplos e inspección
 
 Ejecuta `python examples/07_plate_with_hole.py --quick --output results` y

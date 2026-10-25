@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" role="img" aria-labelledby="title desc">
+  <title id="title">Comprobación de una malla 2 por 2 en serial y con MPI</title>
+  <desc id="desc">La misma malla de ocho triángulos aparece completa en serial y repartida entre dos rangos MPI, manteniendo ocho celdas globales.</desc>
+  <defs><style>.cell{stroke:#fff;stroke-width:3}.r0{fill:#2d5a4e}.r1{fill:#8b3a2f}.box{fill:#fff;stroke:#d8d3cc;stroke-width:3}.h{font:600 24px 'DM Sans',Arial,sans-serif;fill:#1a1a1a;text-anchor:middle}.p{font:400 18px 'DM Sans',Arial,sans-serif;fill:#5a5a5a;text-anchor:middle}.ok{font:700 20px 'DM Sans',Arial,sans-serif;fill:#2d5a4e;text-anchor:middle}.a{stroke:#77736e;stroke-width:4;fill:none}</style><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#77736e"/></marker></defs>
+  <rect width="1000" height="500" rx="18" fill="#faf9f7"/>
+  <g transform="translate(70 80)"><text class="h" x="170" y="0">1 proceso</text><rect class="box" x="40" y="45" width="260" height="260"/><path class="r0 cell" d="M40 45H170V175Z M40 45V175H170Z M170 45H300V175Z M170 45V175H300Z M40 175H170V305Z M40 175V305H170Z M170 175H300V305Z M170 175V305H300Z"/><text class="p" x="170" y="350">rango 0: 8 celdas</text></g>
+  <path class="a" marker-end="url(#m)" d="M405 220H545"/>
+  <g transform="translate(570 80)"><text class="h" x="170" y="0">2 procesos</text><rect class="box" x="40" y="45" width="260" height="260"/><path class="r0 cell" d="M40 45H170V175Z M40 45V175H170Z M40 175H170V305Z M40 175V305H170Z"/><path class="r1 cell" d="M170 45H300V175Z M170 45V175H300Z M170 175H300V305Z M170 175V305H300Z"/><text class="p" x="170" y="350">rango 0: 4 · rango 1: 4</text></g>
+  <text class="ok" x="500" y="460">La partición cambia; el total global permanece en 8.</text>
+</svg>

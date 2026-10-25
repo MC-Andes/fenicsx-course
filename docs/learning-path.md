@@ -21,6 +21,10 @@ Toda simulación del curso recorre el mismo ciclo:
 Las lecciones cambian la física, pero conservan este vocabulario. Cada página
 indica qué pasos son nuevos y cuáles se reutilizan.
 
+![Ruta común y cuatro especializaciones del curso](assets/figures/course-roadmap.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">Todo estudiante completa el tronco común; después elige una rama sin perder el mismo ciclo de modelación y verificación.</p>
+
 ## Recorrido recomendado
 
 | Etapa | Lecciones | Pregunta que resuelve | Evidencia |
@@ -40,8 +44,10 @@ indica qué pasos son nuevos y cuáles se reutilizan.
 
 ### Ruta esencial — una primera PDE
 
-Completa 0 → 1 → 2. Al final podrás leer un problema escalar lineal, reconocer
-su forma débil y ejecutar una solución con comprobación de error.
+Completa 0 → 1 → laboratorio guiado → 2. Al final podrás leer un problema
+escalar lineal, reconocer su forma débil y ejecutar una solución con
+comprobación de error. El [laboratorio guiado](guides/first-simulation.md)
+incluye pausas y respuestas para que no avances con una pieza sin entender.
 
 ### Ruta térmica
 

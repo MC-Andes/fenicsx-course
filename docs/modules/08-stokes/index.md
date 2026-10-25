@@ -60,6 +60,10 @@ compatibilidad inf-sup a nivel de este curso.
 | presión hasta constante | `PETSc.NullSpace` |
 | caudal | integral global de $u\cdot n$ |
 
+![Perfil parabólico, presión lineal y caudal en el canal de Stokes](../../assets/figures/stokes-channel.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">El perfil de Poiseuille, la caída de presión, el caudal $2/3$ y la divergencia pequeña deben ser coherentes entre sí.</p>
+
 ## Ejemplo
 
 ```bash

@@ -31,6 +31,7 @@ nav:
   - Núcleo común:
       - 0 · Orientación: modules/00-orientation/index.md
       - 1 · Matemática y forma débil: foundations/weak-forms.md
+      - Laboratorio guiado · primera simulación: guides/first-simulation.md
       - 2 · Primer problema — Poisson: modules/04-poisson/index.md
       - 3 · Objetos de DOLFINx: modules/01-variables/index.md
       - 4 · Mallas, etiquetas y fronteras: modules/02-meshes/index.md

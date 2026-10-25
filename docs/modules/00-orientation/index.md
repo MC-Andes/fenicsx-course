@@ -19,6 +19,10 @@ No se resuelve una PDE. El “modelo” es una malla triangular del cuadrado uni
 las coordenadas y resultados son adimensionales. La condición comprobable es
 que una partición serial o MPI conserve ocho celdas globales.
 
+![La malla de ocho triángulos conservada al pasar de serial a dos rangos MPI](../../assets/figures/sanity-mpi.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">Cada rango almacena una parte distinta; la reducción global debe recuperar las mismas ocho celdas.</p>
+
 ## Forma débil
 
 No aplica todavía. Una forma débil aparecerá en la lección 1; aquí se comprueba
@@ -35,12 +39,32 @@ que los componentes capaces de compilarla y ensamblarla son compatibles.
 | álgebra lineal | PETSc/petsc4py |
 | memoria distribuida | MPI/mpi4py |
 
+![Recorrido desde la PDE hasta el sistema algebraico distribuido](../../assets/figures/fenicsx-stack.svg){ .lesson-figure loading=lazy }
+
+<p class="figure-caption">UFL conserva la cercanía con la notación matemática; DOLFINx organiza la discretización y PETSc resuelve el sistema.</p>
+
+### Cómo leer la pila sin memorizar nombres
+
+1. Tú eliges la PDE, el dominio, las condiciones y la forma débil.
+2. UFL representa las integrales de manera simbólica.
+3. FFCx y Basix convierten formas y elementos en kernels numéricos.
+4. DOLFINx conecta malla, espacios, ensamblaje y datos distribuidos.
+5. PETSc resuelve el sistema; MPI reparte el trabajo y comunica procesos.
+
+En las primeras lecciones basta con reconocer quién hace cada tarea. No es
+necesario llamar directamente a FFCx ni implementar comunicación MPI manual.
+
 ## Ejemplo mínimo e inspección
 
 Ejecuta `python examples/00_sanity_check.py --output results`. El script
 canónico es `examples/00_sanity_check.py`; imprime versiones, rango/tamaño MPI
 y número global de celdas. Repite con `mpirun -n 2` y confirma que solo el rango
 0 escribe el JSON.
+
+!!! question "Punto de control"
+    Si el resultado global cambia al pasar de uno a dos procesos, ¿falló la
+    física? Todavía no hay física. Primero revisa el conteo de celdas propias,
+    la reducción MPI y que los procesos usen el mismo entorno.
 
 ## Solver
 
@@ -54,8 +78,8 @@ La malla 2×2 se divide en dos triángulos por cuadrado: el total global debe se
 
 ## Visualización e interpretación
 
-No se requiere visualización. Aprende desde ahora que una imagen de la malla no
-reemplaza el conteo global.
+La figura permite anticipar la partición, pero no reemplaza el conteo global.
+En MPI, los colores o índices locales pueden cambiar sin alterar la malla física.
 
 ## Errores frecuentes
 
